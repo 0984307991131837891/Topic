@@ -5,6 +5,13 @@
     font-family: 'poppins', sans-serif;
 }
 
+.Lbody {
+    flex-direction: column;
+    display: flex;
+    background-color: #fff;
+
+}
+
 section {
     position: relative;
     width: 100%;
@@ -120,4 +127,108 @@ img[alt='2'] {
     margin-right: -90px;
     /* filter: invert(1); */
     transform: scale(0.5);
+}
+
+#about {
+    margin: auto auto auto auto;
+    background: url(./picture/669006.png);
+    width: 1920px;
+    height: 1080px;
+    color: #fff;
+
+}
+
+#about h1 {
+    width: 100%;
+    height: 450px;
+}
+
+#about h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+
+    align-items: center;
+    justify-content: center;
+    margin-left: 1230px;
+    padding: 10px;
+    width: 300px;
+    height: 50px;
+    display: flex;
+
+}
+
+#about p {
+
+    margin-top: 10px;
+    font-size: 20px;
+    margin-left: 1250px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 500px;
+    height: 200px;
+    border: 2px solid #00eaff;
+
+    font-weight: bold;
+}
+
+#about p:hover {
+    background: #2ec0cd83;
+    box-shadow: 0 0 50px #00eaff;
+    transition: 0.5s;
+}
+
+#trainers {
+    width: 1920px;
+    height: 1080px;
+    color: #fff;
+    background: url(./picture/1653634773477.jpg);
+
+}
+
+#trainers h1 {
+    width: 100%;
+    height: 600px;
+}
+
+
+#trainers h2 {
+    text-transform: uppercase;
+
+    background-color: #333;
+    font-size: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 200px;
+    padding: 10px;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    border-radius: 4px;
+
+
+}
+
+#trainers p {
+    background-color: #333;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 100px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 200px;
+    font-weight: bold;
+    border-radius: 4px;
+
+}
+
+#traniners p:hover {
+    background: #00eaff;
+    box-shadow: 0 0 50px #00eaff;
+    transition: 1s;
 }
