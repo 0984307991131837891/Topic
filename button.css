@@ -25,7 +25,7 @@ a {
     overflow: hidden;
     font-size: 20px;
     transition: 0.5s;
-    -webkit-box-reflect: below 1px linear-gradient(transparent, #0002);
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0003);
 }
 
 a:hover {
