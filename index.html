@@ -11,6 +11,10 @@
     <link rel="icon" href="./picture/LOGO.ico">
     <title>首頁</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         .logo {
             display: flex;
             align-items: center;
@@ -24,20 +28,18 @@
 
 <body>
 
-    <div class="Lbody">
-
-
+    <div class="Lbody" id="Lbody">
         <section>
             <header>
                 <a href="#">
-                    <img class='logo' src="./picture/LOGO.jpg">
+                    <img class='logo' id="logo" src="./picture/LOGO.jpg">
                 </a>
                 <ul class="navbar">
-                    <li><a href="./">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Trainers</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#Lbody">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#trainers">Trainers</a></li>
+                    <li><a href="#Blog">Blog</a></li>
+                    <li><a href="#Contact">Contact</a></li>
                 </ul>
             </header>
             <div class="content">
@@ -76,7 +78,7 @@
         </div>
         <div id="blog">
             <h1></h1>
-            <a href="#" class="Bloga">Blog</a>
+            <a href="#" class="Bloga" id="Blog">Blog</a>
             <div class="container2">
                 <div class="box">
                     <span></span>
@@ -124,3 +126,8 @@
 </body>
 
 </html>
+<script>
+    if (document.body.clientWidth < 1920) {
+        document.body.style.zoom = document.body.clientWidth / 1920;
+    }
+</script>
