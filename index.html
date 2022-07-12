@@ -23,6 +23,16 @@
             height: 100px;
             border-radius: 20px;
         }
+
+        .line {
+            margin-left: -120px;
+            transform: rotate(90deg);
+            color: gold;
+            position: absolute;
+            margin-top: -100px;
+            display: flex;
+            text-shadow: 0 0 0.6em goldenrod, 0 0 0.6em goldenrod, 0 0 0.6em goldenrod;
+        }
     </style>
 </head>
 
@@ -35,11 +45,12 @@
                     <img class='logo' id="logo" src="./picture/LOGO.jpg">
                 </a>
                 <ul class="navbar">
-                    <li><a href="#Lbody">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#trainers">Trainers</a></li>
-                    <li><a href="#Blog">Blog</a></li>
-                    <li><a href="#Contact">Contact</a></li>
+                    <li><a href="#Lbody" class="button">Home</a></li>
+                    <li><a href="#about" class="button">About</a></li>
+                    <li><a href="#trainers" class="button">Trainers</a></li>
+                    <li><a href="#Blog" class="button">Blog</a></li>
+                    <li><a href="#Carousel" class="button">Carousel</a></li>
+                    <li><a href="#Contact" class="button">Contact</a></li>
                 </ul>
             </header>
             <div class="content">
@@ -49,33 +60,40 @@
                         expedita temporibus natus delectus facere cupiditate, reiciendis quaerat, nulla quia officiis
                         rerum
                         ipsum eligendi consequuntur incidunt porro.</p>
-                    <a href="#">Started</a>
+                    <a href="#" class="button">Started</a>
                 </div>
             </div>
             <ul class="sci">
                 <li><a href="#"><img src="./picture/facebook.png" alt="1"></a></li>
                 <li><a href="#"><img src="./picture/Icon-Twitter-PNG.png" alt="2"></a></li>
-                <li><a href="#"><img src="./picture/Instagram-Logo-PNG-Pic-1.png" alt="1"></a></li>
+                <li><a href="#"><img src="./picture/Instagram-Logo-PNG-Pic-1.png" alt="3"></a></li>
             </ul>
         </section>
-        <div class="main">
-            <div id="about">
-                <h1></h1>
-                <h2>About us</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, nobis ab incidunt velit rerum
-                    quibusdam
-                    aut adipisci. Placeat quaerat ratione, quidem et modi molestias, officia hic voluptatum ad
-                    reprehenderit
-                    nisi?</p>
-            </div>
-            <div id="trainers">
-                <h1></h1>
-                <h2>trainers</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque atque perspiciatis non, nobis earum
-                    recusandae asperiores voluptatibus molestias nostrum in. Aspernatur, iure ipsam! Error non quia
+
+        <div id="about">
+            <h1></h1>
+            <h2>About us</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, nobis ab incidunt velit rerum
+                quibusdam
+                aut adipisci. Placeat quaerat ratione, quidem et modi molestias, officia hic voluptatum ad
+                reprehenderit
+                nisi?</p>
+        </div>
+        <div id="trainers">
+            <h1></h1>
+            <h2>TRAINERS</h2>
+            <div class="BoxOverFlow">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque atque
+                    perspiciatis non, nobis
+                    earum
+                    recusandae asperiores voluptatibus molestias nostrum in. Aspernatur, iure ipsam! Error non
+                    quia
                     dolore necessitatibus blanditiis vel!</p>
+                <div class="line">___________________________________</div>
+
             </div>
         </div>
+
         <div id="blog">
             <h1></h1>
             <a href="#" class="Bloga" id="Blog">Blog</a>
@@ -119,7 +137,10 @@
                         <a href="#">Read More</a>
                     </div>
                 </div>
+
             </div>
+        </div>
+        <div id="Carousel">
         </div>
     </div>
 
