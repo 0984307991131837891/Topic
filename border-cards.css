@@ -17,11 +17,12 @@
     justify-content: center;
     align-items: center;
     margin: 20px 30px;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .container2 .box:hover {
-    transform: translateY(-20px);
+
+    transform: translateY(-40px);
 }
 
 .container2 .box::before {
