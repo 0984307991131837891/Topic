@@ -14,28 +14,29 @@ body {
 
 }
 
-a {
+.button {
+
     position: relative;
     padding: 10px 30px;
     margin: 0 15px;
     color: #21ebff;
     text-decoration: none;
-    text-transform: uppercase;
     /*全部變大寫 */
+    text-transform: uppercase;
     overflow: hidden;
     font-size: 20px;
     transition: 0.5s;
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0003);
 }
 
-a:hover {
+.button:hover {
     background: #21ebff;
     color: #111;
     box-shadow: 0 0 50px #21ebff;
     transition-delay: 0.05s;
 }
 
-a:before {
+.button:before {
     content: '';
     position: absolute;
     top: 0;
@@ -48,14 +49,15 @@ a:before {
 
 }
 
-a:hover:before {
+.button:hover:before {
+
 
     width: 100%;
     height: 100%;
 }
 
 
-a:after {
+.button:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -67,7 +69,8 @@ a:after {
     transition: 0.5s;
 }
 
-a:hover:after {
+
+.button:hover:after {
     width: 100%;
     height: 100%;
 }
