@@ -17,13 +17,14 @@ section {
 
     width: 100%;
     height: 1000px;
-    background: url(./picture/796180.png);
+    background: url(./img/1.png);
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 100px;
+
 
 }
 
@@ -37,6 +38,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 9999;
+
 }
 
 /* header .logo {
@@ -52,10 +55,13 @@ header .navbar {
     position: relative;
     display: flex;
 
+
+
 }
 
 header .navbar li {
     list-style: none;
+
 }
 
 header .navbar li a {
@@ -64,6 +70,8 @@ header .navbar li a {
     margin-right: 40px;
     font-size: 20px;
     text-decoration: none;
+
+
 }
 
 .content {
@@ -141,7 +149,7 @@ img[alt='3'] {
 img[alt='1']:hover {
     border-radius: 50%;
     background-color: #00eaff;
-    transition: all 0.4s;
+    transition: 0.4s;
     transform: rotate(360deg);
     background-color: aqua;
     width: 139px;
@@ -150,7 +158,7 @@ img[alt='1']:hover {
 
 img[alt='2']:hover {
     border-radius: 20px;
-    transition: all 0.4s;
+    transition: 0.4s;
     transform: rotate(360deg);
     background-color: aqua;
     width: 160px;
@@ -160,7 +168,7 @@ img[alt='2']:hover {
 
 img[alt='3']:hover {
     border-radius: 50px;
-    transition: all 0.4s;
+    transition: 0.4s;
     transform: rotate(360deg);
     background-color: aqua;
     width: 139px;
@@ -170,7 +178,7 @@ img[alt='3']:hover {
 
 #about {
     margin: auto auto auto auto;
-    background: url(./picture/669006.png);
+    background: url(./img/2.png);
     width: 1920px;
     height: 1080px;
     color: #fff;
@@ -225,7 +233,7 @@ img[alt='3']:hover {
 #trainers {
     width: 100%;
     height: 1080px;
-    background: url(./picture/1653634773477.jpg);
+    background: url(./img/3.jpg);
 
 
 }
@@ -261,7 +269,7 @@ img[alt='3']:hover {
     font-weight: bold;
     margin-left: -500px;
     position: relative;
-    transition: all 0.6s;
+    transition: 0.6s;
 }
 
 
@@ -283,7 +291,7 @@ img[alt='3']:hover {
 #blog {
     width: 100%;
     height: 1080px;
-    background: url(./picture/890161.jpg);
+    background: url(./img/4.jpg);
     background-repeat: no-repeat;
     background-size: 100% 120%;
     background-attachment: fixed;
@@ -296,28 +304,43 @@ img[alt='3']:hover {
     width: 100%;
 }
 
-#blog a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-}
+#blog .Blog-logo {
 
-.Bloga {
     color: rgb(100, 100, 100);
     background-color: rgba(255, 255, 255, 0.752);
     border-radius: 6px;
     font-size: 30px;
     margin: auto auto;
+
     width: 200px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#blog {
-    width: 100%;
-    height: 1080px;
-    background: url(./picture/890161.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 120%;
-    background-attachment: fixed;
+#blog .Blog-logo:hover {
+    transition: 0.5s;
+    width: 250px;
+}
 
+.carousel-h2 {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(100, 100, 100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    transition: 0.5s;
+    text-shadow: 0 0 2em #fff, 0 0 4em #fff, 0 0 6em #fff, 0 0 2em #fff, 0 0 4em #fff, 0 0 6em #fff;
+}
+
+.carousel-h2:hover {
+    letter-spacing: 5px;
+    font-size: 30px;
+    text-shadow: 0 0 2em #fff, 0 0 4em #fff, 0 0 6em #fff, 0 0 8em #fff, 0 0 10em #fff, 0 0 12em #fff;
 }
