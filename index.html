@@ -5,205 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./button.css">
-    <link rel="stylesheet" href="./border-cards.css">
-    <link rel="stylesheet" href="./reel.css">
     <link rel="icon" href="./img/LOGO.ico">
-    <title>首頁</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100px;
-            height: 100px;
-            border-radius: 20px;
-        }
-
-        .line {
-            margin-left: -120px;
-            transform: rotate(90deg);
-            color: gold;
-            position: absolute;
-            margin-top: -100px;
-            display: flex;
-            text-shadow: 0 0 0.6em goldenrod, 0 0 0.6em goldenrod, 0 0 0.6em goldenrod;
-        }
-    </style>
 </head>
 
 <body>
+    <header>
+        <div class="navbar">
 
-    <div class="Lbody" id="Lbody">
-        <section>
-            <header>
-                <a href="#">
-                    <img class='logo' id="logo" src="./img/LOGO.jpg">
-                </a>
-                <ul class="navbar">
-                    <li><a href="#Lbody" class="button">Home</a></li>
-                    <li><a href="#about" class="button">About</a></li>
-                    <li><a href="#trainers" class="button">Trainers</a></li>
-                    <li><a href="#blog" class="button">Blog</a></li>
-                    <li><a href="##carousel" class="button">Carousel</a></li>
-                    <li><a href="#Contact" class="button">Contact</a></li>
+            <div class="LOGO"><a href="#">LOGO</a></div>
+
+            <div class="nav-links" id="navLinks">
+                <div class="fa" onclick="hideMenu()"><img src="./img/./close(白).png" alt="close"></div>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">COURSE</a></li>
+                    <li><a href="#">BLOG</a></li>
                 </ul>
-            </header>
-            <div class="content">
-                <div class="contentBx">
-                    <h2>這是一個網站</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste obcaecati ratione eaque tempora
-                        expedita temporibus natus delectus facere cupiditate, reiciendis quaerat, nulla quia officiis
-                        rerum
-                        ipsum eligendi consequuntur incidunt porro.</p>
-                    <a href="#" class="button">Started</a>
-                </div>
             </div>
-            <ul class="sci">
-                <li><a href="#"><img src="./img/facebook.png" alt="1"></a></li>
-                <li><a href="#"><img src="./img/Icon-Twitter-PNG.png" alt="2"></a></li>
-                <li><a href="#"><img src="./img/Instagram-Logo-PNG-Pic-1.png" alt="3"></a></li>
-            </ul>
-        </section>
-
-        <div id="about">
-            <h1></h1>
-            <h2>About us</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, nobis ab incidunt velit rerum
-                quibusdam
-                aut adipisci. Placeat quaerat ratione, quidem et modi molestias, officia hic voluptatum ad
-                reprehenderit
-                nisi?</p>
+            <div class="fa" onclick="showMenu()"><img src="./img/menu(白).png" alt="menu"></div>
         </div>
-        <div id="trainers">
-            <h1></h1>
-            <h2>TRAINERS</h2>
-            <div class="BoxOverFlow">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque atque
-                    perspiciatis non, nobis
-                    earum
-                    recusandae asperiores voluptatibus molestias nostrum in. Aspernatur, iure ipsam! Error non
-                    quia
-                    dolore necessitatibus blanditiis vel!</p>
-                <div class="line">___________________________________</div>
-
-            </div>
-        </div>
-
-        <div id="blog">
-            <h1></h1>
-            <a href="#" class="Blog-logo">Blog</a>
-            <div class="container2">
-                <div class="box">
-                    <span></span>
-                    <div class="content2">
-                        <h2>Card One</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, omnis quidem ex esse
-                            accusantium
-                            quis
-                            ducimus tenetur nam similique, veniam quos asperiores explicabo vel natus nemo ea neque
-                            itaque
-                            corporis.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-                <div class="box">
-                    <span></span>
-                    <div class="content2">
-                        <h2>Card Two</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, omnis quidem ex esse
-                            accusantium
-                            quis
-                            ducimus tenetur nam similique, veniam quos asperiores explicabo vel natus nemo ea neque
-                            itaque
-                            corporis.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-                <div class="box">
-                    <span></span>
-                    <div class="content2">
-                        <h2>Card Three</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, omnis quidem ex esse
-                            accusantium
-                            quis
-                            ducimus tenetur nam similique, veniam quos asperiores explicabo vel natus nemo ea neque
-                            itaque
-                            corporis.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <h2 id='#carousel' class="carousel-h2">&lt;Carousel&gt;</h2>
-        <div id="carousel">
-            <div class="container">
-                <img src="./img/reel1.jpg" alt="">
-                <img src="./img/reel2.png" alt="">
-                <img src="./img/reel3.png" alt="">
-                <img src="./img/reel4.jpg" alt="">
-                <img src="./img/reel5.png" alt="">
-            </div>
-
-            <div class="shift">
-                <button class='btn left' onclick="leftShift()">&lt;</button>
-                <button class='btn right' onclick="rightShift()">&gt;</button>
-            </div>
-
-            <div class="bottom">
-                <button class='indicator' onclick="setIndex(0)"></button>
-                <button class='indicator' onclick="setIndex(1)"></button>
-                <button class='indicator' onclick="setIndex(2)"></button>
-                <button class='indicator' onclick="setIndex(3)"></button>
-                <button class='indicator' onclick="setIndex(4)"></button>
-            </div>
-
-        </div>
-    </div>
-
-
+    </header>
 </body>
 
-</html>
 <script>
-    if (document.body.clientWidth < 1920) {
-        document.body.style.zoom = document.body.clientWidth / 1920;
-    }
+    var navLinks = document.getElementById('navLinks');
+    function showMenu() {
+        navLinks.style.right = '0';
 
+    }
+    function hideMenu() {
+        navLinks.style.right = '-200px';
 
-    // <-----輪播----->
-    let index = 0
-    function refresh() {
-        if (index < 0) {
-            index = 4
-        } else if (index > 4) {
-            index = 0
-        }
-        let carousel = document.querySelector('#carousel')
-        let width = getComputedStyle(carousel).width
-        width = Number(width.slice(0, -2))
-        carousel.querySelector('.container').style.left =
-            index * width * -1 + "px"
     }
-    function leftShift() {
-        index--
-        refresh()
-    }
-    function rightShift() {
-        index++
-        refresh()
-    }
-    function setIndex(idx) {
-        index = idx
-        refresh()
-    }
-    refresh()
-    // <-----輪播----->
 </script>
+
+</html>
