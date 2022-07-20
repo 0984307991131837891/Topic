@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,34 +13,97 @@
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
 
-            <div class="LOGO"><a href="#">LOGO</a></div>
+    <header>
+        <div id="navbar">
+
+            <div class="LOGO" id="LOGO"><a href="#">LOGO</a></div>
 
             <div class="nav-links" id="navLinks">
                 <div class="fa" onclick="hideMenu()"><img src="./img/./close(白).png" alt="close"></div>
                 <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">COURSE</a></li>
-                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">首頁</a></li>
+                    <li><a href="#">關於我們</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+
                 </ul>
             </div>
             <div class="fa" onclick="showMenu()"><img src="./img/menu(白).png" alt="menu"></div>
         </div>
     </header>
+    <section>
+        <!-- 芋頭 -->
+        <div class="container">
+            <img src="./img/芋頭2.jpg" alt="1">
+            <div class="content">
+                金山跳石海岸梯田，因特殊地質條件、環境氣候，口感既香、又Q、且鬆軟、口感佳，
+                品質佳，所以知名的九份芋圓也採用跳石芋做原料。
+
+
+
+            </div>
+            <img src="./img/芋頭.jpg" alt="2">
+            <div class="content">
+
+                金山芋頭的產季為9到10月，品種
+                為檳榔心芋，芋頭的葉柄亦含有多量鈣、磷、鐵，可當蔬菜食用，也可醃製加工曬乾煮
+                湯或甜點。金山區公所2016-09-23。金山「跳石芋」 入口香、Q、鬆，賣出好價格。
+            </div>
+        </div>
+
+        <p class="line">
+
+        </p>
+
+
+
+        <!-- 地瓜 -->
+        <div class="container">
+            <img src="./img/地瓜.jpg" alt="1">
+            <div class="content">
+                新北市金山區 紅心地瓜
+                台農66號，特徵：紅皮紅肉盛產期為春夏嘗起來口感細軟、甜度高、水分含量也高適合料理：煮、蒸、烤、食品加工地瓜含豐富維生素C、是攝取鎂的好來源、也可以攝取到鉀、血糖上升較慢、含有豐富類胡蘿蔔素
+            </div>
+        </div>
+
+        <p class='line'>
+
+        </p>
+
+
+        <!-- 筍子 -->
+        <div class="container">
+            <img src="./img/筍子.jpg" alt="1">
+            <div class="content">
+                八里綠竹筍生長於長坑里紅水仙溪、楓林坑溪、荖阡里荖阡坑溪、舊城里葛瑪蘭溪等沙壤土中，加上東北季風帶來的鹽分嘗起來特別細嫩甜美，口感猶如細嫩水梨，外型色澤則因為像黃金般鮮亮，所以取作「黃金筍」。6月至9月是綠竹筍的產季，現採綠竹筍帶殼現蒸直接吃像水梨，也可沾八里特產柚子醬油、竹筍炒蛋等。存放較久或「出青」來不及收成，導致筍尖稍微呈現綠色的綠竹筍，口感脆而香氣足，相對纖維度較高，適合煮湯、做成綠竹筍滷肉、酸筍或曬乾製成筍乾等加工品v>
+            </div>
+            <img src="./img/竹筍2-696x464.jpg" alt="2">
+        </div>
+    </section>
+    <div class="end">
+
+    </div>
 </body>
 
 <script>
+
     var navLinks = document.getElementById('navLinks');
+    var navbar = document.getElementById('navbar');
+    var LOGO = document.getElementById('LOGO');
+
     function showMenu() {
-        navLinks.style.right = '0';
+        LOGO.style.opacity = '0';
+        navLinks.style.right = '-190px';
+        navLinks.style.position = 'relative';
+        navbar.style.background = 'rgba(255,255,255,0)';
 
     }
-    function hideMenu() {
-        navLinks.style.right = '-200px';
 
+    function hideMenu() {
+        LOGO.style.opacity = '1';
+        navLinks.style.right = '-250px';
+        navLinks.style.position = 'absolute';
+        navbar.style.background = 'rgba(100, 100, 100, 1)';
     }
 </script>
 
