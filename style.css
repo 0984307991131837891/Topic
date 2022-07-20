@@ -139,14 +139,14 @@ img[alt='2'] {
 
 
 .content {
-    padding: 25px;
+    padding: 30px;
     color: #fff;
     font-weight: bolder;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
+    font-size: 18px;
 
 }
 
