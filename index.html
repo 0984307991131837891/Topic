@@ -8,16 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topic</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./img/LOGO.ico">
+    <link rel="icon" href="./img/LOGO.jpg">
 
 </head>
 
 <body>
 
     <header>
-        <div id="navbar">
+        <div class="navbar">
 
-            <div class="LOGO" id="LOGO"><a href="#">LOGO</a></div>
+            <div class="LOGO"><a href="#">LOGO</a></div>
 
             <div class="nav-links" id="navLinks">
                 <div class="fa" onclick="hideMenu()"><img src="./img/./close(白).png" alt="close"></div>
@@ -25,7 +25,6 @@
                     <li><a href="#">首頁</a></li>
                     <li><a href="#">關於我們</a></li>
                     <li><a href="#">聯絡我們</a></li>
-
                 </ul>
             </div>
             <div class="fa" onclick="showMenu()"><img src="./img/menu(白).png" alt="menu"></div>
@@ -86,25 +85,16 @@
 </body>
 
 <script>
-
     var navLinks = document.getElementById('navLinks');
-    var navbar = document.getElementById('navbar');
-    var LOGO = document.getElementById('LOGO');
-
     function showMenu() {
-        LOGO.style.opacity = '0';
-        navLinks.style.right = '-190px';
-        navLinks.style.position = 'relative';
-        navbar.style.background = 'rgba(255,255,255,0)';
+        navLinks.style.right = '0';
 
     }
-
     function hideMenu() {
-        LOGO.style.opacity = '1';
-        navLinks.style.right = '-250px';
-        navLinks.style.position = 'absolute';
-        navbar.style.background = 'rgba(100, 100, 100, 1)';
+        navLinks.style.right = '-200px';
+
     }
 </script>
+
 
 </html>
