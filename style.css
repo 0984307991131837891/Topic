@@ -145,8 +145,19 @@ img[alt='2'] {
         border: 1px solid #00d0ff;
         align-items: center;
         justify-content: center;
+        transition: 0.5s;
 
     }
+
+    .nav-links ul li:hover {
+        background: #00d0ff;
+    }
+
+    .nav-links ul li ::after {
+        display: none;
+    }
+
+
 
     .nav-links {
         top: 0;
