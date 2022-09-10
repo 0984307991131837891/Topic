@@ -9,79 +9,659 @@
     <title>Topic</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./img/LOGO.jpg">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-
     <header>
         <div class="navbar">
 
             <div class="LOGO"><a href="#">LOGO</a></div>
 
             <div class="nav-links" id="navLinks">
-                <div class="fa" onclick="hideMenu()"><img src="./img/./close(白).png" alt="close"></div>
+                <div class="fa" onclick="hideMenu()"><img src="./img/./close(黑).png" alt="close"></div>
                 <ul>
-                    <li><a href="#">首頁</a></li>
-                    <li><a href="#">關於我們</a></li>
-                    <li><a href="#">聯絡我們</a></li>
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="#Imgmain">全部地區特產</a></li>
+                    <li><a href="about.html">關於我們</a></li>
+                    <li><a href="connection.html">聯絡我們</a></li>
                 </ul>
             </div>
-            <div class="fa" onclick="showMenu()"><img src="./img/menu(白).png" alt="menu"></div>
+            <div class="fa" onclick="showMenu()"><img src="./img/menu(黑).png" alt="menu"></div>
         </div>
     </header>
-    <section>
-        <!-- 芋頭 -->
+
+
+    <div class="carousel">
+
         <div class="container">
-            <img src="./img/芋頭2.jpg" alt="1">
-            <div class="content">
-                金山跳石海岸梯田，因特殊地質條件、環境氣候，口感既香、又Q、且鬆軟、口感佳，
-                品質佳，所以知名的九份芋圓也採用跳石芋做原料。
+            <img src="./img/輪地瓜.jpg">
+            <img src="./img/輪芋頭.jpg">
+            <img src="./img/輪綠竹筍.jpg">
 
-
-
-            </div>
-            <img src="./img/芋頭.jpg" alt="2">
-            <div class="content">
-
-                金山芋頭的產季為9到10月，品種
-                為檳榔心芋，芋頭的葉柄亦含有多量鈣、磷、鐵，可當蔬菜食用，也可醃製加工曬乾煮
-                湯或甜點。金山區公所2016-09-23。金山「跳石芋」 入口香、Q、鬆，賣出好價格。
-            </div>
         </div>
 
-        <p class="line">
-
-        </p>
-
-
-
-        <!-- 地瓜 -->
-        <div class="container">
-            <img src="./img/地瓜.jpg" alt="1">
-            <div class="content">
-                新北市金山區 紅心地瓜
-                台農66號，特徵：紅皮紅肉盛產期為春夏嘗起來口感細軟、甜度高、水分含量也高適合料理：煮、蒸、烤、食品加工地瓜含豐富維生素C、是攝取鎂的好來源、也可以攝取到鉀、血糖上升較慢、含有豐富類胡蘿蔔素
-            </div>
+        <div class="shift">
+            <button class='btn left' onclick="leftShift()">&lt;</button>
+            <button class='btn right' onclick="rightShift()">&gt;</button>
         </div>
 
-        <p class='line'>
-
-        </p>
-
-
-        <!-- 筍子 -->
-        <div class="container">
-            <img src="./img/筍子.jpg" alt="1">
-            <div class="content">
-                八里綠竹筍生長於長坑里紅水仙溪、楓林坑溪、荖阡里荖阡坑溪、舊城里葛瑪蘭溪等沙壤土中，加上東北季風帶來的鹽分嘗起來特別細嫩甜美，口感猶如細嫩水梨，外型色澤則因為像黃金般鮮亮，所以取作「黃金筍」。6月至9月是綠竹筍的產季，現採綠竹筍帶殼現蒸直接吃像水梨，也可沾八里特產柚子醬油、竹筍炒蛋等。存放較久或「出青」來不及收成，導致筍尖稍微呈現綠色的綠竹筍，口感脆而香氣足，相對纖維度較高，適合煮湯、做成綠竹筍滷肉、酸筍或曬乾製成筍乾等加工品v>
-            </div>
-            <img src="./img/竹筍2-696x464.jpg" alt="2">
+        <div class="bottom">
+            <button class='indicator' onclick="setIndex(0)"></button>
+            <button class='indicator' onclick="setIndex(1)"></button>
+            <button class='indicator' onclick="setIndex(2)"></button>
         </div>
-    </section>
-    <div class="end">
-
     </div>
+    <section>
+        <h1 id="Imgmain">新北農產品特色</h1>
+        <div class="Imgmain" style='margin-bottom:60px;'>
+            <div>
+                <span>新北農產品Map</span>
+                <h2>
+                    <div class="MapText">　</div>
+                    <div class="MapImg">　</div>
+
+                </h2>
+
+                <img src="./mapImages/新北.png" usemap="#Map" style='position:absolute;opacity:0;z-index:999;'>
+
+                <map name="Map">
+                    <area shape="poly" onmouseover="TextHover('三峽')"
+                        coords="44,359,66,352,81,337,94,340,130,349,165,352,178,360,182,374,176,389,176,414,185,419,186,438,172,454,152,475,118,430,102,431,94,438,70,428,76,422,64,412,78,407,49,380"
+                        href="#Imgmain" alt="三峽" class="map">
+                    <area shape="poly" onmouseover="TextHover('新店')"
+                        coords="188,415,180,397,191,379,189,358,171,346,184,326,201,317,221,306,236,302,255,324,292,324,280,364"
+                        href="#Imgmain" alt="新店" class="map">
+                    <area shape="poly" onmouseover="TextHover('烏來')"
+                        coords="134,507,185,587,283,540,276,478,364,455,377,434,243,393,202,410,187,457" href="#Imgmain"
+                        alt="烏來" class="map">
+                    <area shape="poly" onmouseover="TextHover('坪林')"
+                        coords="334,415,384,431,445,402,451,306,376,321,350,333,359,361,335,386" href="#Imgmain"
+                        alt="坪林" class="map">
+                    <area shape="poly" onmouseover="TextHover('雙溪')"
+                        coords="460,306,460,379,478,369,490,373,510,354,496,322,533,278,540,239,527,200,509,195,495,242,472,258,447,269,434,291"
+                        href="#Imgmain" alt="雙溪" class="map">
+                    <area shape="poly" onmouseover="TextHover('貢寮')"
+                        coords="569,181,563,208,579,230,574,250,595,266,631,272,611,297,521,318,547,270,549,237,534,199"
+                        href="#Imgmain" alt="貢寮" class="map">
+                    <area shape="poly" onmouseover="TextHover('石碇')"
+                        coords="272,396,325,413,331,381,353,361,346,327,393,311,391,279,368,245,326,268,322,310,306,328,292,347,290,373,273,377"
+                        href="#Imgmain" alt="石碇" class="map">
+                    <area shape="poly" onmouseover="TextHover('平溪')"
+                        coords="393,245,456,219,475,249,451,263,438,277,431,288,437,302,398,307,400,278,388,270"
+                        href="#Imgmain" alt="平溪" class="map">
+                    <area shape="poly" onmouseover="TextHover('瑞芳')"
+                        coords="443,177,459,184,469,167,478,168,545,178,547,190,531,197,507,193,492,219,492,242,478,243,475,233,459,216,446,221,425,185"
+                        href="#Imgmain" alt="瑞芳" class="map">
+
+                    <area shape="poly" onmouseover="TextHover('汐止')"
+                        coords="304,154,398,235,381,255,367,242,332,260,301,240,311,201,282,179" href="#Imgmain"
+                        alt="汐止" class="map">
+                    <area shape="poly" onmouseover="TextHover('萬里')"
+                        coords="274,142,293,119,294,109,327,83,351,101,369,98,361,108,376,129,317,156,304,151,292,164"
+                        href="#Imgmain" alt="萬里" class="map">
+                    <area shape="poly" onmouseover="TextHover('金山')"
+                        coords="255,91,288,57,306,51,301,38,307,36,321,78,333,76,292,105,280,131,268,132"
+                        href="#Imgmain" alt="金山" class="map">
+                    <area shape="poly" onmouseover="TextHover('石門')"
+                        coords="206,28,231,23,229,14,252,20,265,13,279,19,300,34,303,49,286,55,255,86,244,61,242,42,223,47"
+                        href="#Imgmain" alt="石門" class="map">
+                    <area shape="poly" onmouseover="TextHover('三芝')"
+                        coords="202,32,224,53,237,47,238,63,245,70,246,78,253,89,219,120,186,97,197,77,157,61,179,55"
+                        href="#Imgmain" alt="三芝" class="map">
+                    <area shape="poly" onmouseover="TextHover('淡水')"
+                        coords="153,65,191,78,181,108,219,128,204,127,164,174,152,135,120,121" href="#Imgmain" alt="淡水"
+                        class="map">
+                    <area shape="poly" onmouseover="TextHover('八里')"
+                        coords="123,129,149,143,163,179,131,169,123,173,113,177,119,213,102,212,106,200,83,164"
+                        href="#Imgmain" alt="八里" class="map">
+                    <area shape="poly" onmouseover="TextHover('林口')"
+                        coords="1,182,81,165,103,200,97,213,115,216,117,229,98,222,86,231,55,218" href="#Imgmain"
+                        alt="林口" class="map">
+                    <area shape="poly" onmouseover="TextHover('五股')"
+                        coords="132,173,162,184,167,191,160,208,171,221,157,230,151,222,143,226,122,216,117,178"
+                        href="#Imgmain" alt="五股" class="map">
+                    <area shape="poly" onmouseover="TextHover('蘆洲')" coords="168,192,194,198,174,222,172,215,162,208"
+                        href='#Imgmain' alt="蘆洲" class="map">
+                    <area shape="poly" onmouseover="TextHover('三重')" coords="196,204,206,236,194,249,171,250,170,228"
+                        href="#Imgmain" alt="三重" class="map">
+                    <area shape="poly" onmouseover="TextHover('板橋')"
+                        coords="171,252,187,252,190,276,172,280,169,296,150,293,138,312,136,294" href="#Imgmain"
+                        alt="板橋" class="map">
+                    <area shape="poly" onmouseover="TextHover('鶯歌')"
+                        coords="49,305,84,310,94,323,81,335,56,353,42,346,53,339" href="#Imgmain" alt="鶯歌" class="map">
+                    <area shape="poly" onmouseover="TextHover('樹林')"
+                        coords="104,276,124,268,137,286,131,304,134,313,119,323,113,341,84,334,97,324,90,309"
+                        href="#Imgmain" alt="樹林" class="map">
+                    <area shape="poly" onmouseover="TextHover('土城')"
+                        coords="151,300,177,298,175,308,181,322,174,336,149,346,121,341,122,327,146,315" href="#Imgmain"
+                        alt="土城" class="map">
+                    <area shape="poly" onmouseover="TextHover('新莊')"
+                        coords="108,245,123,255,150,249,148,238,165,231,169,243,169,252,140,286,124,265,115,266,108,261"
+                        href="#Imgmain" alt="新莊" class="map">
+                    <area shape="poly" onmouseover="TextHover('泰山')"
+                        coords="120,218,142,228,149,226,152,231,146,236,147,247,126,252,97,228,119,232" href="#Imgmain"
+                        alt="泰山" class="map">
+                    <area shape="poly" onmouseover="TextHover('中和')"
+                        coords="178,283,198,275,207,285,207,298,220,292,222,300,183,323,177,298,174,291" href="#Imgmain"
+                        alt="中和" class="map">
+                    <area shape="poly" onmouseover="TextHover('永和')" coords="209,267,225,273,227,288,213,293,204,275"
+                        href="#Imgmain" alt="永和" class="map">
+                    <area shape="poly" onmouseover="TextHover('深坑')"
+                        coords="283,273,318,265,321,289,318,304,303,314,281,303" href="#Imgmain" alt="深坑" class="map">
+                </map>
+                <div>
+
+                    <img src="./mapImages/烏來.png" class="child 烏來">
+                    <img src="./mapImages/貢寮.png" class="child 貢寮">
+                    <img src="./mapImages/雙溪.png" class="child 雙溪">
+                    <img src="./mapImages/瑞芳.png" class="child 瑞芳">
+                    <img src="./mapImages/坪林.png" class="child 坪林">
+                    <img src="./mapImages/平溪.png" class="child 平溪">
+                    <img src="./mapImages/石碇.png" class="child 石碇">
+                    <img src="./mapImages/深坑.png" class="child 深坑">
+                    <img src="./mapImages/汐止.png" class="child 汐止">
+                    <img src="./mapImages/萬里.png" class="child 萬里">
+                    <img src="./mapImages/新店.png" class="child 新店">
+                    <img src="./mapImages/三峽.png" class="child 三峽">
+
+                    <img src="./mapImages/永和.png" class="child 永和">
+                    <img src="./mapImages/中和.png" class="child 中和">
+                    <img src="./mapImages/土城.png" class="child 土城">
+                    <img src="./mapImages/板橋.png" class="child 板橋">
+                    <img src="./mapImages/新莊.png" class="child 新莊">
+                    <img src="./mapImages/樹林.png" class="child 樹林">
+                    <img src="./mapImages/鶯歌.png" class="child 鶯歌">
+
+                    <img src="./mapImages/金山區.png" class="child 金山">
+                    <img src="./mapImages/石門.png" class="child 石門">
+                    <img src="./mapImages/三芝.png" class="child 三芝">
+                    <img src="./mapImages/三重.png" class="child 三重">
+                    <img src="./mapImages/蘆洲.png" class="child 蘆洲">
+                    <img src="./mapImages/泰山.png" class="child 泰山">
+                    <img src="./mapImages/五股.png" class="child 五股">
+                    <img src="./mapImages/淡水.png" class="child 淡水">
+                    <img src="./mapImages/八里.png" class="child 八里">
+                    <img src="./mapImages/林口.png" class="child 林口">
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            $("area").hover(function () {
+                $('.' + this.alt).css('transform', 'translateY(-10px)');
+                $('.' + this.alt).css('opacity', '1');
+                // console.log(this.id);
+            },
+                function () {
+                    $('.' + this.alt).css('transform', '');
+                    $('.' + this.alt).css('opacity', '');
+                });
+
+            function TextHover(id) {
+                var MapText = document.querySelector('.MapText');
+                // var Lclass = document.querySelector('.' + id);
+                MapText.innerHTML = id + '區';
+                // Lclass.classList.toggle('child2');
+            }
+
+            $('.map').click(function () {
+                let event = this.alt;
+                console.log(event)
+                $('.child').css('opacity', '0.3');
+                $('.' + event).css('opacity', '1');
+                switch (event) {
+                    case '烏來':
+                        $('.MapImg').html(`
+                        <a href="#珠蔥" class='child2'><img src="./img/珠蔥.jpg">珠蔥</a>
+                        `)
+                        break;
+                    case '貢寮':
+                        $('.MapImg').html(`
+                        <a href="#珠蔥" class='child2'><img src="./img/珠蔥.jpg">珠蔥</a>
+                        <a href="#山藥" class='child2'><img src="./img/山藥.jpg">山藥</a>
+                        `)
+                        break;
+                    case '淡水':
+                        $('.MapImg').html(`
+                        <a href="#文旦" class='child2'><img src="./img/文旦.jpg">文旦</a>
+                        <a href="#筊白筍" class='child2'><img src="./img/筊白筍.jpg">筊白筍</a>
+                        <a href="#山藥" class='child2'><img src="./img/山藥.jpg">山藥</a>
+                        `)
+                        break;
+                    case '三峽':
+                        $('.MapImg').html(`
+                        <a href="#桶柑" class='child2'><img src='img/桶柑.jpg'>桶柑</a>
+                        <a href="#蜜香紅茶" class='child2'><img src='img/蜜香紅茶.jpg'>蜜香紅茶</a>
+                        <a href="#碧螺春" class='child2'><img src='img/碧螺春.jpg'>螺春</a>
+                        `)
+                        break;
+                    case '深坑':
+                        $('.MapImg').html(`
+                        <a href="#文山包種茶" class='child2'><img src='img/文山包種茶.jpg'>文山包種茶</a>
+                        `)
+                        break;
+                    case '八里':
+                        $('.MapImg').html(`
+                        <a href="#文旦" class='child2'><img src='img/文旦.jpg'>文旦</a>
+                        <a href="#桶柑" class='child2'><img src='img/桶柑.jpg'>桶柑</a>
+                        `)
+                        break;
+                    case '三芝':
+                        $('.MapImg').html(`
+                        <a href="#地瓜" class='child2'><img src='img/地瓜.jpg'>地瓜</a>
+                        <a href="#筊白筍" class='child2'><img src='img/筊白筍.jpg'>筊白筍</a>
+                        <a href="#山藥" class='child2'><img src='img/山藥.jpg'>山藥</a>
+                        `)
+                        break;
+                    case '五股':
+                        $('.MapImg').html(`
+                        <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
+                        <a href="#文旦" class='child2'><img src='img/文旦.jpg'>文旦</a>
+                        `)
+                        break;
+                    case '平溪':
+                        $('.MapImg').html(`
+                            <a href="#文山包種茶" class='child2'><img src='img/文山包種茶.jpg'>文山包種茶</a>
+                            <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
+                            <a href="#山藥" class='child2'><img src='img/山藥.jpg'>山藥</a>
+                            <a href="#珠蔥" class='child2'><img src='img/珠蔥.jpg'>珠蔥</a>
+                            `)
+                        break;
+                    case '石門':
+                        $('.MapImg').html(`
+                                <a href="#筊白筍" class='child2'><img src='img/筊白筍.jpg'>筊白筍</a>
+                                <a href="#鐵觀音" class='child2'><img src='img/鐵觀音.jpg'>鐵觀音</a>
+                                `)
+                        break;
+                    case '石碇':
+                        $('.MapImg').html(`
+                                <a href="#文山包種茶" class='child2'><img src='img/文山包種茶.jpg'>文山包種茶</a>
+                                <a href="#東方美人茶" class='child2'><img src='img/東方美人茶.jpg'>東方美人茶</a>
+                                `)
+                        break;
+                    case '汐止':
+                        $('.MapImg').html(`
+                                <a href="#文山包種茶" class='child2'><img src='img/文山包種茶.jpg'>文山包種茶</a>
+                                `)
+                        break;
+                    case '板橋':
+                        $('.MapImg').html(`
+                                <a href="#發芽米" class='child2'><img src='img/發芽米.jpg'>發芽米</a>
+                                <a href="#東方美人茶" class='child2'><img src='img/東方美人茶.jpg'>東方美人茶</a>
+                                `)
+                        break;
+                    case '林口':
+                        $('.MapImg').html(`
+                                <a href="#龍壽茶" class='child2'><img src='img/龍壽茶.jpg'>龍壽茶</a>
+                                <a href="#東方美人茶" class='child2'><img src='img/東方美人茶.jpg'>東方美人茶</a>
+                                `)
+                        break;
+                    case '金山':
+                        $('.MapImg').html(`
+                                <a href="#地瓜" class='child2'><img src='img/地瓜.jpg'>地瓜</a>
+                                <a href="#芋頭" class='child2'><img src='img/芋頭3.jpg'>芋頭</a>
+                                <a href="#筊白筍" class='child2'><img src='img/筊白筍.jpg'>筊白筍</a>
+                                `)
+                        break;
+                    case '泰山':
+                        $('.MapImg').html(`
+                                <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
+                                `)
+                        break;
+                    case '新店':
+                        $('.MapImg').html(`
+                                <a href="#文山包種茶" class='child2'><img src='img/文山包種茶.jpg'>文山包種茶</a>
+                                <a href="#文旦" class='child2'><img src='img/文旦.jpg'>文旦</a>
+                                <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
+                                `)
+                        break;
+                    case '瑞芳':
+                        $('.MapImg').html(`
+                                <a href="#山藥" class='child2'><img src='img/山藥.jpg'>山藥</a>
+                                <a href="#文旦" class='child2'><img src='img/文旦.jpg'>文旦</a>
+                                <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
+                                `)
+                        break;
+                    case '萬里':
+                        $('.MapImg').html(`
+                                <a href="#地瓜" class='child2'><img src='img/地瓜.jpg'>地瓜</a>
+                                <a href="#文旦" class='child2'><img src='img/文旦.jpg'>文旦</a>
+                                <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
+                                `)
+                        break;
+                    case '雙溪':
+                        $('.MapImg').html(`
+                                <a href="#山藥" class='child2'><img src='img/山藥.jpg'>山藥</a>
+                                <a href="#珠蔥" class='child2'><img src='img/珠蔥.jpg'>珠蔥</a>
+                                <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
+                                `)
+                        break;
+
+                }
+            });
+        </script>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/地瓜.jpg" id="地瓜">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：金山區　種類：紅心地瓜<br>
+                    盛產期：8~9月　特徵：紅皮紅肉<br>
+                    介紹：<br>
+                    1.口感：細軟、甜度高、水分含量也高<br>
+                    2.生長環境：北海岸的火山地質、風多、雨多<br>
+                    3.營養價值：地瓜含豐富維生素C、是攝取鎂的好來源
+                    也可以攝取到鉀、血糖上升較慢、含有豐富類胡蘿蔔素<br>
+                </p>
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/芋頭3.jpg" id="芋頭">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：金山區　種類：檳榔心芋<br>
+                    盛產期：9~10月　特徵：表皮褐色、肉白色<br>
+                    介紹：<br>
+                    1.口感：香、又Q、又鬆軟<br>
+                    2.生長環境：金山跳石海岸梯田，特殊地質條件、環境氣候<br>
+                    3.營養價值：芋頭的葉柄亦含有多量鈣、磷、鐵，可當蔬菜食用
+                    ，也可醃製加工曬乾煮湯或甜點<br>
+
+                </p>
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/筍子.jpg" id="筍子">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：八里區　種類：綠竹筍<br>
+                    盛產期：6~9月　特徵：筍形彎曲呈羊角狀<br>
+                    介紹：<br>
+                    1.口感：細嫩甜美、猶如細膩水梨<br>
+                    2.生長環境：土壤肥沃、東北季風帶來的鹽分<br>
+                    3.營養價值：低熱量高纖維，可提升飽足感，並有助腸胃蠕動
+                    ，所以很適合減重、便祕的人吃<br>
+
+                </p>
+
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/文旦.jpg" id="文旦">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：八里區　種類：文旦<br>
+                    盛產期：3~4月　特徵：形狀較為矮胖<br>
+                    介紹：<br>
+                    1.口感：Ｑ彈，果肉香甜，果香濃郁<br>
+                    2.生長環境：位處丘陵地、夏季雨量少、土質鬆軟<br>
+                    3.營養價值：維生素C的含量，為百果之冠，高於檸檬三倍<br>
+                    ，蘋果七倍，且以柚皮部分貯量最高
+                    4. 近年更搭配七夕情人節活動，推出印有「LOVE」或「囍」字的心型幸福柚<br>
+
+                </p>
+
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/筊白筍.jpg" id="筊白筍">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：三芝區　種類：筊白筍<br>
+                    盛產期：10~11月　特徵： 外型筆直細長、筍肉潔白<br>
+                    介紹：<br>
+                    1.口感：脆中帶嫩<br>
+                    2.生長環境：丘陵梯田，景致獨樹一格，加上好風好水好土壤<br>
+                    3.營養價值：富含蛋白質、醣類、維他命A、C、
+                    膳食纖維等營養成分，可預防骨質酥鬆症、促進新陳代謝<br>
+
+                </p>
+
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/文山包種茶.jpg" id="文山包種茶">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：坪林區　種類：文山包種茶<br>
+                    盛產期：4~5月、10~11月　特徵：外觀翠綠條索緊結<br>
+                    介紹：<br>
+                    1.口感：滋味溫和清揚而甘潤，入口生津，喉韻無窮。<br>
+                    2.生長環境：坪林多丘陵，溫暖潮濕，雲霧彌漫<br>
+                    3.營養價值：黃酮醇類、咖啡因、胡蘿蔔素、皂素
+                    豐富的營養保健成分，可強心、利尿、消除疲勞<br>
+
+
+                </p>
+
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/山藥.jpg" id="山藥">
+            </div>
+            <div class="content">
+                <p>
+                    地區：雙溪區　種類：山藥<br>
+                    盛產期：11~12月　特徵：紅皮白肉種<br>
+                    介紹：<br>
+                    1.口感：新鮮爽脆<br>
+                    2.生長環境：陽明山，由於溫差大、土壤中富含礦物質，水質乾淨<br>
+                    3.營養價值：山藥具有益腎氣、健脾胃、止洩痢、化痰涎等功效
+                    含蛋白質、氨基酸、礦物質、粘質多糖體或薯蕷皂<br>
+                </p>
+
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/發芽米.jpg" id="發芽米">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：板橋區　種類：發芽米<br>
+                    介紹：<br>
+                    1.口感：偏硬偏粗<br>
+                    2.生長環境：在一定溫度、濕度下進行培養<br>
+                    3.營養價值：有快脾開胃、下氣和中、消食化積的功效
+                    IP-6能幫助治療腎臟結石、降低膽固醇和血脂肪<br>
+
+                </p>
+
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/龍壽茶.jpg" id="龍壽茶">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：林口區　種類：龍壽茶<br>
+                    盛產期：4~11月　特徵：條索緊結整齊<br>
+                    介紹：<br>
+                    1.口感：一杯喉韻甘潤，再飲舒暢壽延<br>
+                    2.生長環境：丘陵地，氣候涼爽，空氣濕潤，雨量充沛<br>
+                    3.營養價值：茶中的生物類黃酮活性相當強﹐它可以
+                    與維生素C一起作用並有助於預防心血管疾病與中風的發生<br>
+                </p>
+
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/鐵觀音.jpg" id="鐵觀音">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：石門區　種類：鐵觀音<br>
+                    盛產期：4-5月、10-11月　特徵：條索緊結彎捲成半球型<br>
+                    介紹：<br>
+                    1.口感：味濃而醇厚，微澀中帶甘潤，弱果酸味<br>
+                    2.生長環境：不受海風直接吹襲，氣候涼爽<br>
+                    3.營養價值：功效解毒消食、防癌抗癌提神益思、美容養顏抗衰老<br>
+
+
+                </p>
+
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/蜜香紅茶.jpg" id="蜜香紅茶">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：三峽區　種類：蜜香紅茶<br>
+                    盛產期：6~9月　特徵：小綠葉蟬咬葉片，邊緣則呈捲曲狀<br>
+                    介紹：<br>
+                    1.口感：入喉回甘，收斂但不澀苦<br>
+                    2.生長環境：環境清幽純樸，生態資源豐富<br>
+                    3.營養價值：紅茶中含有豐富的蛋白質和糖，生熱暖腹
+                    能增強人體的抗寒能力，紅茶不僅不會傷胃，反而能夠養胃。<br>
+                </p>
+
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/碧螺春.jpg" id="碧螺春">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：三峽區　種類：碧螺春<br>
+                    盛產期：3~12月　特徵：碧綠清澈，像翡翠顏色般的翠綠<br>
+                    介紹：<br>
+                    1.口感：清雅纖細的清香，入口後清新回甘<br>
+                    2.生長環境：山上氣候涼爽，雲霧濛密，土質良好<br>
+                    3.營養價值：茶多酚和維生素c都有活血化瘀防止動脈硬化<br>
+                    所以經常飲茶的人當中,高血壓和冠心病的發病率較低。<br>
+                </p>
+
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/珠蔥.jpg" id="珠蔥">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：平溪區　種類：珠蔥<br>
+                    盛產期：3~4月<br>
+                    介紹：<br>
+                    1.口感：淡雅的蔥香、甘甜的口感，鮮嫩、細緻<br>
+                    2.生長環境：溼冷的氣候加上些許春天暖意與陽光<br>
+                    3.營養價值：鉀、鈣、維生素C、維他命B、胡蘿蔔素<br>
+                    葉酸、以及能提升免疫力的硒<br>
+
+                </p>
+
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/東方美人茶.jpg" id="東方美人茶">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：石碇區　種類：東方美人茶<br>
+                    盛產期：6~7月　特徵：葉身呈白綠黃紅褐五色相間<br>
+                    介紹：<br>
+                    1.口感：黃澄清透的色澤與醇厚甘甜<br>
+                    2.生長環境：層巒迭翠，山坡上栽植，受山光水氣之薰陶<br>
+                    3.營養價值：抗衰老、美白、養顏、減肥等功效<br>
+                </p>
+
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/石花菜.jpg" id="石花菜">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：貢寮區 種類：石花菜<br>
+                    盛產期：4~7月 特徵：深紅色<br>
+                    介紹：<br>
+                    1.口感：近似燕窩<br>
+                    2.生長環境：海水深度約1至1.5公尺處或低潮帶礁岩上<br>
+                    3.營養價值：富含碳水化合物、纖維素
+                    維生素B1、B2、礦物質鉀、鈣、碘<br>
+
+                </p>
+
+            </div>
+        </div>
+        </div>
+        <p class="line"></p>
+        <div class="container2">
+            <div class="img-inset">
+                <img src="./img/桶柑.jpg" id="桶柑">
+            </div>
+            <div class="content">
+
+                <p>
+                    地區：八里區　種類：桶柑<br>
+                    盛產期：12~2月　特徵：果形扁平，色澤鮮黃紅潤<br>
+                    介紹：<br>
+                    1.口感：清爽、多汁、果肉細緻<br>
+                    2.生長環境：日照西曬充足，加上東北季風的海風吹拂<br>
+                    3.營養價值：礦物質、酵素、檸檬酸及大量維他命C<br>
+                    維生素A、葉酸、果膠及可溶性纖維<br>
+
+
+                </p>
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+
 </body>
 
 <script>
@@ -94,6 +674,65 @@
         navLinks.style.right = '-200px';
 
     }
+
+    //<-------------------------------.----------------------------------->
+    function createAuto() {
+        return setInterval(() => {
+            index++
+            refresh()
+
+        }, 3000)
+    }
+    let autoTimer = createAuto()
+
+
+
+    let index = 0
+    function refresh() {
+
+        if (index < 0) {
+            index = 2
+        } else if (index > 2) {
+            index = 0
+        }
+
+        let carousel = document.querySelector('.carousel')
+
+        let width = getComputedStyle(carousel).width
+        width = Number(width.slice(0, -2))
+
+        carousel.querySelector('.container').style.left =
+            index * width * -1 + "px"
+
+    }
+
+    function leftShift() {
+        index--
+        refresh()
+        clearInterval(autoTimer)
+        autoTimer = createAuto()
+        return result
+    }
+
+    function rightShift() {
+        index++
+        refresh()
+        clearInterval(autoTimer)
+        autoTimer = createAuto()
+        return result
+    }
+    function setIndex(idx) {
+        index = idx
+        refresh()
+        clearInterval(autoTimer)
+        autoTimer = createAuto()
+        return result
+    }
+
+
+
+
+    refresh()
 </script>
 
 
