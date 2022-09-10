@@ -82,21 +82,19 @@ header {
     display: none;
 }
 
+.to_top_btn {
 
-/* section .container:nth-child(1) {
-    background: linear-gradient(315deg, #ffbc00, #ff0058);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+    border: 3px solid #39f;
+    border-radius: 50%;
+    background: url('./img/置頂.jpg');
+    background-size: cover;
 }
-
-section .container:nth-child(3) {
-    background: linear-gradient(315deg, #03a9f4, #ff0058);
-}
-
-section .container:nth-child(5) {
-    background: linear-gradient(315deg, #4dff03, #00d0ff);
-} */
-
-
-
 
 /* <--------------------carousel----------------------> */
 .carousel {
@@ -202,6 +200,11 @@ section {
     height: 2500px;
 }
 
+.div1 {
+    top: -150px;
+    position: relative;
+}
+
 .container2 {
     padding: 2% 6%;
     display: flex;
@@ -270,28 +273,23 @@ section h1 {
 
 /* <-------------------map--------------------> */
 .Imgmain {
-    height: 800px;
+    height: 550px;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-left: -150px;
+    margin-left: -200px;
 }
 
 .child {
-    transition: all 0.8s;
+    transition: all 0.4s;
     position: absolute;
-    opacity: 0.8;
+    opacity: 0.4;
 }
 
 .MapImg {
     position: absolute;
     display: flex;
     flex-direction: column;
-
-    margin-left: -150px;
-
-
-
 }
 
 .child2 {
@@ -303,16 +301,42 @@ section h1 {
 }
 
 .child2 img {
-    width: 100px;
-    height: 80px;
-
-
+    width: 140px;
+    height: 100px;
     border: 5px solid #fff;
     border-radius: 6px;
     box-shadow: 2px 2px 5px #111;
+    margin-right: 10px;
 
 }
 
+dialog {
+    top: 20%;
+    left: 70%;
+    width: 350px;
+    height: 450px;
+    padding: 10px;
+    border: none;
+    box-shadow: 2px 2px 5px #333;
+    border-radius: 11px;
+
+
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background: url('./img/close\(黑\).png');
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}
 
 /* media */
 @media(max-width:900px) {
