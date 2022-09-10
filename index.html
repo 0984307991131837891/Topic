@@ -16,7 +16,7 @@
 
 <body>
     <header>
-        <div class="navbar">
+        <div class="navbar" id="navbar">
 
             <div class="LOGO"><a href="#">LOGO</a></div>
 
@@ -24,7 +24,7 @@
                 <div class="fa" onclick="hideMenu()"><img src="./img/./close(黑).png" alt="close"></div>
                 <ul>
                     <li><a href="index.html">首頁</a></li>
-                    <li><a href="#Imgmain">全部地區特產</a></li>
+                    <li><a href="#Imgmain">互動地圖</a></li>
                     <li><a href="about.html">關於我們</a></li>
                     <li><a href="connection.html">聯絡我們</a></li>
                 </ul>
@@ -34,7 +34,7 @@
     </header>
 
 
-    <div class="carousel">
+    <div class="carousel" id="carousel">
 
         <div class="container">
             <img src="./img/輪地瓜.jpg">
@@ -54,6 +54,9 @@
             <button class='indicator' onclick="setIndex(2)"></button>
         </div>
     </div>
+    <a href="#carousel">
+        <div class="to_top_btn"></div>
+    </a>
     <section>
         <h1 id="Imgmain">新北農產品特色</h1>
         <div class="Imgmain" style='margin-bottom:60px;'>
@@ -61,7 +64,11 @@
                 <span>新北農產品Map</span>
                 <h2>
                     <div class="MapText">　</div>
-                    <div class="MapImg">　</div>
+                    <dialog id="infoModal">
+                        <div class="Maptitle"></div>
+                        <div class="MapImg"></div>
+                        <button class="close"></button>
+                    </dialog>
 
                 </h2>
 
@@ -191,14 +198,24 @@
         </div>
 
         <script>
+            let infoModal = document.querySelector("#infoModal");
+            let Lclose = document.querySelector(".close");
+
+
+            Lclose.addEventListener("click", function () {
+                infoModal.close();
+            })
+            // -------------------------
+
             $("area").hover(function () {
                 $('.' + this.alt).css('transform', 'translateY(-10px)');
                 $('.' + this.alt).css('opacity', '1');
                 // console.log(this.id);
+                // $('.MapImg').html(``)
             },
                 function () {
                     $('.' + this.alt).css('transform', '');
-                    $('.' + this.alt).css('opacity', '');
+                    $('.' + this.alt).css('opacity', '0.3');
                 });
 
             function TextHover(id) {
@@ -213,6 +230,8 @@
                 console.log(event)
                 $('.child').css('opacity', '0.3');
                 $('.' + event).css('opacity', '1');
+                $('.Maptitle').html(event);
+                $('.MapImg').html(``);
                 switch (event) {
                     case '烏來':
                         $('.MapImg').html(`
@@ -340,13 +359,23 @@
                                 <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
                                 `)
                         break;
+                    case '三重':
+                        $('.MapImg').html(`
+                                <a href="#" class='child2'><img src='img/8+9.jpg'>8+9</a>
+                                <a href="#" class='child2'><img src='img/新北最強資料處理科.jpg'>新北最強資料處理科</a>
+                                `)
+                        break;
 
                 }
+
+                infoModal.showModal();
+
             });
         </script>
         <div class="container2">
+            <div class="div1" id="地瓜"></div>
             <div class="img-inset">
-                <img src="./img/地瓜.jpg" id="地瓜">
+                <img src="./img/地瓜.jpg">
             </div>
             <div class="content">
 
@@ -363,8 +392,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="芋頭"></div>
             <div class="img-inset">
-                <img src="./img/芋頭3.jpg" id="芋頭">
+                <img src="./img/芋頭3.jpg">
             </div>
             <div class="content">
 
@@ -374,7 +404,7 @@
                     介紹：<br>
                     1.口感：香、又Q、又鬆軟<br>
                     2.生長環境：金山跳石海岸梯田，特殊地質條件、環境氣候<br>
-                    3.營養價值：芋頭的葉柄亦含有多量鈣、磷、鐵，可當蔬菜食用
+                    3.營養價值：芋頭的葉柄亦含有多量鈣、磷、鐵，可當蔬菜食用<br>
                     ，也可醃製加工曬乾煮湯或甜點<br>
 
                 </p>
@@ -382,8 +412,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="筍子"></div>
             <div class="img-inset">
-                <img src="./img/筍子.jpg" id="筍子">
+                <img src="./img/筍子.jpg">
             </div>
             <div class="content">
 
@@ -393,7 +424,7 @@
                     介紹：<br>
                     1.口感：細嫩甜美、猶如細膩水梨<br>
                     2.生長環境：土壤肥沃、東北季風帶來的鹽分<br>
-                    3.營養價值：低熱量高纖維，可提升飽足感，並有助腸胃蠕動
+                    3.營養價值：低熱量高纖維，可提升飽足感，並有助腸胃蠕動<br>
                     ，所以很適合減重、便祕的人吃<br>
 
                 </p>
@@ -402,8 +433,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="文旦"></div>
             <div class="img-inset">
-                <img src="./img/文旦.jpg" id="文旦">
+                <img src="./img/文旦.jpg">
             </div>
             <div class="content">
 
@@ -414,7 +446,7 @@
                     1.口感：Ｑ彈，果肉香甜，果香濃郁<br>
                     2.生長環境：位處丘陵地、夏季雨量少、土質鬆軟<br>
                     3.營養價值：維生素C的含量，為百果之冠，高於檸檬三倍<br>
-                    ，蘋果七倍，且以柚皮部分貯量最高
+                    ，蘋果七倍，且以柚皮部分貯量最高<br>
                     4. 近年更搭配七夕情人節活動，推出印有「LOVE」或「囍」字的心型幸福柚<br>
 
                 </p>
@@ -423,8 +455,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="筊白筍"></div>
             <div class="img-inset">
-                <img src="./img/筊白筍.jpg" id="筊白筍">
+                <img src="./img/筊白筍.jpg">
             </div>
             <div class="content">
 
@@ -434,7 +467,7 @@
                     介紹：<br>
                     1.口感：脆中帶嫩<br>
                     2.生長環境：丘陵梯田，景致獨樹一格，加上好風好水好土壤<br>
-                    3.營養價值：富含蛋白質、醣類、維他命A、C、
+                    3.營養價值：富含蛋白質、醣類、維他命A、C、<br>
                     膳食纖維等營養成分，可預防骨質酥鬆症、促進新陳代謝<br>
 
                 </p>
@@ -443,8 +476,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="文山包種茶"></div>
             <div class="img-inset">
-                <img src="./img/文山包種茶.jpg" id="文山包種茶">
+                <img src="./img/文山包種茶.jpg">
             </div>
             <div class="content">
 
@@ -454,7 +488,7 @@
                     介紹：<br>
                     1.口感：滋味溫和清揚而甘潤，入口生津，喉韻無窮。<br>
                     2.生長環境：坪林多丘陵，溫暖潮濕，雲霧彌漫<br>
-                    3.營養價值：黃酮醇類、咖啡因、胡蘿蔔素、皂素
+                    3.營養價值：黃酮醇類、咖啡因、胡蘿蔔素、皂素<br>
                     豐富的營養保健成分，可強心、利尿、消除疲勞<br>
 
 
@@ -464,8 +498,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="山藥"></div>
             <div class="img-inset">
-                <img src="./img/山藥.jpg" id="山藥">
+                <img src="./img/山藥.jpg">
             </div>
             <div class="content">
                 <p>
@@ -474,7 +509,7 @@
                     介紹：<br>
                     1.口感：新鮮爽脆<br>
                     2.生長環境：陽明山，由於溫差大、土壤中富含礦物質，水質乾淨<br>
-                    3.營養價值：山藥具有益腎氣、健脾胃、止洩痢、化痰涎等功效
+                    3.營養價值：山藥具有益腎氣、健脾胃、止洩痢、化痰涎等功效<br>
                     含蛋白質、氨基酸、礦物質、粘質多糖體或薯蕷皂<br>
                 </p>
 
@@ -482,8 +517,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="發芽米"></div>
             <div class="img-inset">
-                <img src="./img/發芽米.jpg" id="發芽米">
+                <img src="./img/發芽米.jpg">
             </div>
             <div class="content">
 
@@ -492,7 +528,7 @@
                     介紹：<br>
                     1.口感：偏硬偏粗<br>
                     2.生長環境：在一定溫度、濕度下進行培養<br>
-                    3.營養價值：有快脾開胃、下氣和中、消食化積的功效
+                    3.營養價值：有快脾開胃、下氣和中、消食化積的功效<br>
                     IP-6能幫助治療腎臟結石、降低膽固醇和血脂肪<br>
 
                 </p>
@@ -501,8 +537,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="龍壽茶"></div>
             <div class="img-inset">
-                <img src="./img/龍壽茶.jpg" id="龍壽茶">
+                <img src="./img/龍壽茶.jpg">
             </div>
             <div class="content">
 
@@ -512,7 +549,7 @@
                     介紹：<br>
                     1.口感：一杯喉韻甘潤，再飲舒暢壽延<br>
                     2.生長環境：丘陵地，氣候涼爽，空氣濕潤，雨量充沛<br>
-                    3.營養價值：茶中的生物類黃酮活性相當強﹐它可以
+                    3.營養價值：茶中的生物類黃酮活性相當強﹐它可以<br>
                     與維生素C一起作用並有助於預防心血管疾病與中風的發生<br>
                 </p>
 
@@ -520,8 +557,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="鐵觀音"></div>
             <div class="img-inset">
-                <img src="./img/鐵觀音.jpg" id="鐵觀音">
+                <img src="./img/鐵觀音.jpg">
             </div>
             <div class="content">
 
@@ -540,8 +578,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="蜜香紅茶"></div>
             <div class="img-inset">
-                <img src="./img/蜜香紅茶.jpg" id="蜜香紅茶">
+                <img src="./img/蜜香紅茶.jpg">
             </div>
             <div class="content">
 
@@ -551,7 +590,7 @@
                     介紹：<br>
                     1.口感：入喉回甘，收斂但不澀苦<br>
                     2.生長環境：環境清幽純樸，生態資源豐富<br>
-                    3.營養價值：紅茶中含有豐富的蛋白質和糖，生熱暖腹
+                    3.營養價值：紅茶中含有豐富的蛋白質和糖，生熱暖腹<br>
                     能增強人體的抗寒能力，紅茶不僅不會傷胃，反而能夠養胃。<br>
                 </p>
 
@@ -559,8 +598,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="碧螺春"></div>
             <div class="img-inset">
-                <img src="./img/碧螺春.jpg" id="碧螺春">
+                <img src="./img/碧螺春.jpg">
             </div>
             <div class="content">
 
@@ -578,8 +618,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="珠蔥"></div>
             <div class="img-inset">
-                <img src="./img/珠蔥.jpg" id="珠蔥">
+                <img src="./img/珠蔥.jpg">
             </div>
             <div class="content">
 
@@ -598,8 +639,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="東方美人茶"></div>
             <div class="img-inset">
-                <img src="./img/東方美人茶.jpg" id="東方美人茶">
+                <img src="./img/東方美人茶.jpg">
             </div>
             <div class="content">
 
@@ -616,8 +658,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="石花菜"></div>
             <div class="img-inset">
-                <img src="./img/石花菜.jpg" id="石花菜">
+                <img src="./img/石花菜.jpg">
             </div>
             <div class="content">
 
@@ -627,7 +670,7 @@
                     介紹：<br>
                     1.口感：近似燕窩<br>
                     2.生長環境：海水深度約1至1.5公尺處或低潮帶礁岩上<br>
-                    3.營養價值：富含碳水化合物、纖維素
+                    3.營養價值：富含碳水化合物、纖維素<br>
                     維生素B1、B2、礦物質鉀、鈣、碘<br>
 
                 </p>
@@ -637,8 +680,9 @@
         </div>
         <p class="line"></p>
         <div class="container2">
+            <div class="div1" id="桶柑"></div>
             <div class="img-inset">
-                <img src="./img/桶柑.jpg" id="桶柑">
+                <img src="./img/桶柑.jpg">
             </div>
             <div class="content">
 
