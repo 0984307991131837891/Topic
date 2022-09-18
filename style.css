@@ -85,6 +85,7 @@ header {
 .to_top_btn {
 
     position: fixed;
+    margin: 50px;
     bottom: 0;
     right: 0;
     padding: 10px;
@@ -215,6 +216,7 @@ section {
     align-items: center;
     justify-content: center;
     position: relative;
+    transition: 0.5s;
 
 }
 
@@ -255,7 +257,6 @@ section {
 }
 
 .img-inset:hover {
-    transition: 0.5s;
     transform: translateY(-20px);
 }
 
