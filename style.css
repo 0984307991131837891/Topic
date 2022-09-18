@@ -2,18 +2,16 @@
 * {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
     font-family: 微軟正黑體;
     text-decoration: none;
-    scroll-behavior: smooth;
 }
-
 
 .LOGO a {
     font-size: 40px;
     color: #333;
-    opacity: 0.8;
+    opacity: 0.7;
     font-weight: bolder;
-    transform: 5s;
 }
 
 .LOGO a:hover {
@@ -32,8 +30,9 @@ header {
     box-shadow: 3px 3px 7px #222;
     border-radius: 50px;
     background-color: #fff;
+
     opacity: 0.8;
-    padding: 1% 5%;
+    padding: 0.5% 5%;
     /* 平圴分配 */
     display: flex;
     justify-content: space-between;
@@ -42,7 +41,6 @@ header {
 }
 
 .nav-links {
-    flex: 1;
     text-align: right;
 }
 
@@ -53,7 +51,7 @@ header {
 }
 
 .nav-links ul li a {
-    font-weight: bolder;
+    font-weight: bold;
     opacity: 0.7;
     font-size: 25px;
     color: #333;
@@ -66,10 +64,12 @@ header {
 
 .nav-links ul li ::after {
     content: '';
+    display: block;
+
     width: 0%;
     height: 2.5px;
+
     background: #00d0ff;
-    display: block;
     margin: auto;
     transition: 0.5s;
 }
@@ -97,17 +97,14 @@ header {
     background-size: cover;
 }
 
-/* <--------------------carousel----------------------> */
+/* <----------------------------------------carousel------------------------------------------> */
 .carousel {
-    margin: auto auto auto auto;
+    margin: auto;
 
     width: 100%;
     height: 100%;
 
-
-
     overflow: hidden;
-
     position: relative;
 }
 
@@ -128,7 +125,6 @@ header {
     flex-shrink: 0;
 
     object-fit: cover;
-
 }
 
 .carousel .shift .btn {
@@ -140,7 +136,6 @@ header {
     background-color: rgba(100, 100, 100, 0);
     color: rgb(100, 100, 100);
 
-
     font-size: 50px;
     font-weight: bold;
 
@@ -149,22 +144,18 @@ header {
 
     width: 260px;
     cursor: pointer;
-
 }
 
 .carousel .shift .left {
     left: 1px;
 }
 
-.carousel .shift .left:hover {
-    color: #fff;
-}
-
 .carousel .shift .right {
     right: 1px;
 }
 
-.carousel .shift .right:hover {
+.carousel .shift .right:hover,
+.carousel .shift .left:hover {
     color: #fff;
 }
 
@@ -192,13 +183,12 @@ header {
 .carousel .bottom .indicator:hover {
     background-color: #fff;
     border: 1px solid #fff;
-
 }
 
-/* <--------------------container2----------------------> */
+/* <----------------------------------------container2------------------------------------------> */
 section {
     width: 100%;
-    height: 2500px;
+
 }
 
 .div1 {
@@ -215,6 +205,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+
     position: relative;
     transition: 0.5s;
 
@@ -239,6 +230,7 @@ section {
 
     font-size: 18px;
     font-weight: bold;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -257,12 +249,12 @@ section {
 }
 
 .img-inset:hover {
-    transform: translateY(-20px);
+    transform: translateY(-25px);
 }
 
 
 section h1 {
-    margin: 30px auto auto auto;
+    margin: auto;
     width: 450px;
     height: 200px;
     font-size: 60px;
@@ -272,7 +264,7 @@ section h1 {
     content: ''
 }
 
-/* <-------------------map--------------------> */
+/* <--------------------------------------map---------------------------------------> */
 .Imgmain {
     height: 550px;
     width: 100%;
@@ -282,9 +274,9 @@ section h1 {
 }
 
 .child {
-    transition: all 0.4s;
+    transition: all 0.3s;
     position: absolute;
-    opacity: 0.4;
+    opacity: 0.3;
 }
 
 .MapImg {
@@ -333,16 +325,26 @@ dialog::backdrop {
     top: 0;
     right: 0;
     border: none;
-    background: url('./img/close\(黑\).png');
+    background: url('img/close\(黑\).png');
     background-size: cover;
     width: 30px;
     height: 30px;
 }
 
-/* media */
+/* <----------------------------------------edia----------------------------------------> */
 @media(max-width:900px) {
-    .carousel {
-        display: none;
+    .carousel .shift .btn {
+        font-size: 25px;
+        width: 150px;
+    }
+
+    .carousel .container img {
+        width: 100%;
+        height: 500px;
+
+        flex-shrink: 0;
+
+        object-fit: cover;
     }
 
     .Imgmain {
@@ -436,12 +438,10 @@ dialog::backdrop {
         margin: 30px 0px 30px 0px;
         justify-content: center;
         display: flex;
-
-
     }
 
     .Imgmain {
-        margin-left: -100px;
-        transform: scale(0.6);
+        margin-left: -180px;
+        transform: scale(0.7);
     }
 }
