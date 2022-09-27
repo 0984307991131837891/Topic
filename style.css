@@ -83,18 +83,25 @@ header {
 }
 
 .to_top_btn {
-
+    z-index: 1000;
     position: fixed;
+    overflow: hidden;
     margin: 50px;
     bottom: 0;
     right: 0;
-    padding: 10px;
+
     width: 70px;
     height: 70px;
-    border: 3px solid #39f;
+
     border-radius: 50%;
-    background: url('./img/置頂.jpg');
-    background-size: cover;
+    border: 2px solid #39f;
+
+    background: url(./img/箭頭.png);
+    background-repeat: no-repeat;
+    background-size: 75% 75%;
+    background-position-x: 15px;
+    background-position-y: center;
+    transform: rotate(-90deg);
 }
 
 /* <----------------------------------------carousel------------------------------------------> */
@@ -321,19 +328,27 @@ dialog::backdrop {
 }
 
 .close {
-    
     position: absolute;
+
     top: 0;
     right: 0;
+    margin: 15px;
+
     border: none;
-    background: url('img/close\(黑\).png');
-    background-size: cover;
     width: 30px;
     height: 30px;
+
+    background: url('img/close\(黑\).png');
+    background-size: cover;
+    cursor: pointer;
 }
 
 /* <----------------------------------------edia----------------------------------------> */
 @media(max-width:900px) {
+    section {
+        overflow: hidden;
+    }
+
     .carousel .shift .btn {
         font-size: 25px;
         width: 150px;
@@ -350,7 +365,7 @@ dialog::backdrop {
 
     .Imgmain {
         margin: 0;
-        transform: scale(0.8);
+        transform: scale(0.7);
     }
 
     .nav-links ul li {
@@ -444,5 +459,10 @@ dialog::backdrop {
     .Imgmain {
         margin-left: -180px;
         transform: scale(0.7);
+    }
+
+    dialog {
+        top: 15%;
+        left: 0;
     }
 }
