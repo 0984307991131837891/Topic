@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topic</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./img/LOGO.jpg">
+    <link rel="icon" href="./icon/LOGO.jpg">
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
@@ -21,15 +21,15 @@
             <div class="LOGO"><a href="#">LOGO</a></div>
 
             <div class="nav-links" id="navLinks">
-                <div class="fa" onclick="hideMenu()"><img src="./img/./close(黑).png" alt="close"></div>
+                <div class="fa" onclick="hideMenu()"><img src="./icon/./close(黑).png" alt="close"></div>
                 <ul>
                     <li><a href="index.html">首頁</a></li>
-                    <li><a>互動地圖</a></li>
+                    <li><a href="#Imgmain">互動地圖</a></li>
                     <li><a href="about.html">關於我們</a></li>
                     <li><a href="connection.html">聯絡我們</a></li>
                 </ul>
             </div>
-            <div class="fa" onclick="showMenu()"><img src="./img/menu(黑).png" alt="menu"></div>
+            <div class="fa" onclick="showMenu()"><img src="./icon/menu(黑).png" alt="menu"></div>
         </div>
     </header>
 
@@ -39,7 +39,8 @@
         <div class="container">
             <img src="./img/輪地瓜.jpg">
             <img src="./img/輪芋頭.jpg">
-            <img src="./img/輪綠竹筍.jpg">
+            <img src="./img/輪文旦.jpg">
+            <img src="./img/輪文山包種茶.jpg">
 
         </div>
 
@@ -52,6 +53,7 @@
             <button class='indicator' onclick="setIndex(0)"></button>
             <button class='indicator' onclick="setIndex(1)"></button>
             <button class='indicator' onclick="setIndex(2)"></button>
+            <button class='indicator' onclick="setIndex(3)"></button>
         </div>
     </div>
     <a href="#top" class="to_top_btn"></a>
@@ -353,10 +355,7 @@
                                 `)
                         break;
                     case '三重':
-                        $('.MapImg').html(`
-                                <a href="#" class='child2'><img src='img/8+9.jpg'>8+9</a>
-                                <a href="#" class='child2'><img src='img/新北最強資料處理科.jpg'>新北最強資料處理科</a>
-                                `)
+                        $('.MapImg').html(``)
                         break;
 
                 }
@@ -687,90 +686,13 @@
                     2.生長環境：日照西曬充足，加上東北季風的海風吹拂<br>
                     3.營養價值：礦物質、酵素、檸檬酸及大量維他命C<br>
                     維生素A、葉酸、果膠及可溶性纖維<br>
-
-
                 </p>
-
             </div>
         </div>
-
-
     </section>
-
-
-
 </body>
 
-<script>
-    var navLinks = document.getElementById('navLinks');
-    function showMenu() {
-        navLinks.style.right = '0';
-
-    }
-    function hideMenu() {
-        navLinks.style.right = '-200px';
-
-    }
-
-    //<-------------------------------.----------------------------------->
-    function createAuto() {
-        return setInterval(() => {
-            index++
-            refresh()
-
-        }, 3000)
-    }
-    let autoTimer = createAuto()
-
-
-
-    let index = 0
-    function refresh() {
-
-        if (index < 0) {
-            index = 2
-        } else if (index > 2) {
-            index = 0
-        }
-
-        let carousel = document.querySelector('.carousel')
-
-        let width = getComputedStyle(carousel).width
-        width = Number(width.slice(0, -2))
-
-        carousel.querySelector('.container').style.left =
-            index * width * -1 + "px"
-
-    }
-
-    function leftShift() {
-        index--
-        refresh()
-        clearInterval(autoTimer)
-        autoTimer = createAuto()
-        return result
-    }
-
-    function rightShift() {
-        index++
-        refresh()
-        clearInterval(autoTimer)
-        autoTimer = createAuto()
-        return result
-    }
-    function setIndex(idx) {
-        index = idx
-        refresh()
-        clearInterval(autoTimer)
-        autoTimer = createAuto()
-        return result
-    }
-
-
-
-
-    refresh()
-</script>
+<script src="./index.js"></script>
 
 
 </html>

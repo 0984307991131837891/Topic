@@ -96,7 +96,7 @@ header {
     border-radius: 50%;
     border: 2px solid #39f;
 
-    background: url(./img/箭頭.png);
+    background: url(./icon/箭頭.png);
     background-repeat: no-repeat;
     background-size: 75% 75%;
     background-position-x: 15px;
@@ -338,7 +338,7 @@ dialog::backdrop {
     width: 30px;
     height: 30px;
 
-    background: url('img/close\(黑\).png');
+    background: url('icon/close\(黑\).png');
     background-size: cover;
     cursor: pointer;
 }
