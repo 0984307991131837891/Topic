@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./icon/LOGO.jpg">
     <script src="https://code.jquery.com/jquery-3.6.1.js"
-        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-
+    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
+    <div class="dialog_backdrop"></div>
     <header>
         <div class="navbar" id="navbar">
-
+            
             <div class="LOGO"><a href="#">LOGO</a></div>
-
+            
             <div class="nav-links" id="navLinks">
                 <div class="fa" onclick="hideMenu()"><img src="./icon/./close(黑).png" alt="close"></div>
                 <ul>
@@ -32,18 +33,18 @@
             <div class="fa" onclick="showMenu()"><img src="./icon/menu(黑).png" alt="menu"></div>
         </div>
     </header>
-
-
+    
+    
     <div class="carousel" id="carousel">
-
+        
         <div class="container">
             <img src="./img/輪地瓜.jpg">
             <img src="./img/輪芋頭.jpg">
             <img src="./img/輪文旦.jpg">
             <img src="./img/輪文山包種茶.jpg">
-
+            
         </div>
-
+        
         <div class="shift">
             <button class='btn left' onclick="leftShift()">&lt;</button>
             <button class='btn right' onclick="rightShift()">&gt;</button>
@@ -64,15 +65,15 @@
                 <span>新北農產品Map</span>
                 <h2>
                     <div class="MapText">　</div>
-                    <dialog id="infoModal">
+                    <div id="dialog">
                         <div class="Maptitle"></div>
                         <div class="MapImg"></div>
                         <button class="close"></button>
-                    </dialog>
+                    </div>
 
                 </h2>
 
-                <img src="./mapImages/新北.png" usemap="#Map" style='position:absolute;opacity:0;z-index:999;'>
+                <img src="./mapImages/新北.png" usemap="#Map" style='position:absolute;opacity:0;z-index:3;'>
 
                 <map name="Map">
                     <area shape="poly" href="#Imgmain" onmouseover="TextHover('三峽')"
@@ -155,7 +156,6 @@
                         coords="283,273,318,265,321,289,318,304,303,314,281,303" alt="深坑" class="map">
                 </map>
                 <div>
-
                     <img src="./mapImages/烏來.png" class="child 烏來">
                     <img src="./mapImages/貢寮.png" class="child 貢寮">
                     <img src="./mapImages/雙溪.png" class="child 雙溪">
@@ -191,179 +191,9 @@
 
             </div>
         </div>
-
-        <script>
-            let infoModal = document.querySelector("#infoModal");
-            let Lclose = document.querySelector(".close");
-
-
-            Lclose.addEventListener("click", function () {
-                infoModal.close();
-            })
-            // -------------------------
-
-            $("area").hover(function () {
-                $('.' + this.alt).css('transform', 'translateY(-10px)');
-                $('.' + this.alt).css('opacity', '1');
-                // console.log(this.id);
-                // $('.MapImg').html(``)
-            },
-                function () {
-                    $('.' + this.alt).css('transform', '');
-                    $('.' + this.alt).css('opacity', '0.3');
-                });
-
-            function TextHover(id) {
-                var MapText = document.querySelector('.MapText');
-                // var Lclass = document.querySelector('.' + id);
-                MapText.innerHTML = id + '區';
-                // Lclass.classList.toggle('child2');
-            }
-
-            $('.map').click(function () {
-                let event = this.alt;
-                console.log(event)
-                $('.child').css('opacity', '0.3');
-                $('.' + event).css('opacity', '1');
-                $('.Maptitle').html(event);
-                $('.MapImg').html(``);
-                switch (event) {
-                    case '烏來':
-                        $('.MapImg').html(`
-                        <a href="#珠蔥" class='child2'><img src="./img/珠蔥.jpg">珠蔥</a>
-                        `)
-                        break;
-                    case '貢寮':
-                        $('.MapImg').html(`
-                        <a href="#珠蔥" class='child2'><img src="./img/珠蔥.jpg">珠蔥</a>
-                        <a href="#山藥" class='child2'><img src="./img/山藥.jpg">山藥</a>
-                        `)
-                        break;
-                    case '淡水':
-                        $('.MapImg').html(`
-                        <a href="#文旦" class='child2'><img src="./img/文旦.jpg">文旦</a>
-                        <a href="#筊白筍" class='child2'><img src="./img/筊白筍.jpg">筊白筍</a>
-                        <a href="#山藥" class='child2'><img src="./img/山藥.jpg">山藥</a>
-                        `)
-                        break;
-                    case '三峽':
-                        $('.MapImg').html(`
-                        <a href="#桶柑" class='child2'><img src='img/桶柑.jpg'>桶柑</a>
-                        <a href="#蜜香紅茶" class='child2'><img src='img/蜜香紅茶.jpg'>蜜香紅茶</a>
-                        <a href="#碧螺春" class='child2'><img src='img/碧螺春.jpg'>螺春</a>
-                        `)
-                        break;
-                    case '深坑':
-                        $('.MapImg').html(`
-                        <a href="#文山包種茶" class='child2'><img src='img/文山包種茶.jpg'>文山包種茶</a>
-                        `)
-                        break;
-                    case '八里':
-                        $('.MapImg').html(`
-                        <a href="#文旦" class='child2'><img src='img/文旦.jpg'>文旦</a>
-                        <a href="#桶柑" class='child2'><img src='img/桶柑.jpg'>桶柑</a>
-                        `)
-                        break;
-                    case '三芝':
-                        $('.MapImg').html(`
-                        <a href="#地瓜" class='child2'><img src='img/地瓜.jpg'>地瓜</a>
-                        <a href="#筊白筍" class='child2'><img src='img/筊白筍.jpg'>筊白筍</a>
-                        <a href="#山藥" class='child2'><img src='img/山藥.jpg'>山藥</a>
-                        `)
-                        break;
-                    case '五股':
-                        $('.MapImg').html(`
-                        <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
-                        <a href="#文旦" class='child2'><img src='img/文旦.jpg'>文旦</a>
-                        `)
-                        break;
-                    case '平溪':
-                        $('.MapImg').html(`
-                            <a href="#文山包種茶" class='child2'><img src='img/文山包種茶.jpg'>文山包種茶</a>
-                            <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
-                            <a href="#山藥" class='child2'><img src='img/山藥.jpg'>山藥</a>
-                            <a href="#珠蔥" class='child2'><img src='img/珠蔥.jpg'>珠蔥</a>
-                            `)
-                        break;
-                    case '石門':
-                        $('.MapImg').html(`
-                                <a href="#筊白筍" class='child2'><img src='img/筊白筍.jpg'>筊白筍</a>
-                                <a href="#鐵觀音" class='child2'><img src='img/鐵觀音.jpg'>鐵觀音</a>
-                                `)
-                        break;
-                    case '石碇':
-                        $('.MapImg').html(`
-                                <a href="#文山包種茶" class='child2'><img src='img/文山包種茶.jpg'>文山包種茶</a>
-                                <a href="#東方美人茶" class='child2'><img src='img/東方美人茶.jpg'>東方美人茶</a>
-                                `)
-                        break;
-                    case '汐止':
-                        $('.MapImg').html(`
-                                <a href="#文山包種茶" class='child2'><img src='img/文山包種茶.jpg'>文山包種茶</a>
-                                `)
-                        break;
-                    case '板橋':
-                        $('.MapImg').html(`
-                                <a href="#發芽米" class='child2'><img src='img/發芽米.jpg'>發芽米</a>
-                                <a href="#東方美人茶" class='child2'><img src='img/東方美人茶.jpg'>東方美人茶</a>
-                                `)
-                        break;
-                    case '林口':
-                        $('.MapImg').html(`
-                                <a href="#龍壽茶" class='child2'><img src='img/龍壽茶.jpg'>龍壽茶</a>
-                                <a href="#東方美人茶" class='child2'><img src='img/東方美人茶.jpg'>東方美人茶</a>
-                                `)
-                        break;
-                    case '金山':
-                        $('.MapImg').html(`
-                                <a href="#地瓜" class='child2'><img src='img/地瓜.jpg'>地瓜</a>
-                                <a href="#芋頭" class='child2'><img src='img/芋頭3.jpg'>芋頭</a>
-                                <a href="#筊白筍" class='child2'><img src='img/筊白筍.jpg'>筊白筍</a>
-                                `)
-                        break;
-                    case '泰山':
-                        $('.MapImg').html(`
-                                <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
-                                `)
-                        break;
-                    case '新店':
-                        $('.MapImg').html(`
-                                <a href="#文山包種茶" class='child2'><img src='img/文山包種茶.jpg'>文山包種茶</a>
-                                <a href="#文旦" class='child2'><img src='img/文旦.jpg'>文旦</a>
-                                <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
-                                `)
-                        break;
-                    case '瑞芳':
-                        $('.MapImg').html(`
-                                <a href="#山藥" class='child2'><img src='img/山藥.jpg'>山藥</a>
-                                <a href="#文旦" class='child2'><img src='img/文旦.jpg'>文旦</a>
-                                <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
-                                `)
-                        break;
-                    case '萬里':
-                        $('.MapImg').html(`
-                                <a href="#地瓜" class='child2'><img src='img/地瓜.jpg'>地瓜</a>
-                                <a href="#文旦" class='child2'><img src='img/文旦.jpg'>文旦</a>
-                                <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
-                                `)
-                        break;
-                    case '雙溪':
-                        $('.MapImg').html(`
-                                <a href="#山藥" class='child2'><img src='img/山藥.jpg'>山藥</a>
-                                <a href="#珠蔥" class='child2'><img src='img/珠蔥.jpg'>珠蔥</a>
-                                <a href="#筍子" class='child2'><img src='img/筍子.jpg'>筍子</a>
-                                `)
-                        break;
-                    case '三重':
-                        $('.MapImg').html(``)
-                        break;
-
-                }
-
-                infoModal.showModal();
-
-            });
-        </script>
+        
+        <script src="./map.js"></script>
+        
         <div class="container2">
             <div class="div1" id="地瓜"></div>
             <div class="img-inset">

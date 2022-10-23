@@ -83,7 +83,7 @@ header {
 }
 
 .to_top_btn {
-    z-index: 1000;
+    z-index: 3;
     position: fixed;
     overflow: hidden;
     margin: 50px;
@@ -310,23 +310,6 @@ section h1 {
 
 }
 
-dialog {
-    top: 20%;
-    left: 70%;
-    width: 350px;
-    height: 450px;
-    padding: 10px;
-    border: none;
-    box-shadow: 2px 2px 5px #333;
-    border-radius: 11px;
-
-
-}
-
-dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
 .close {
     position: absolute;
 
@@ -343,7 +326,32 @@ dialog::backdrop {
     cursor: pointer;
 }
 
-/* <----------------------------------------edia----------------------------------------> */
+#dialog{
+    transform: scale(0);
+    position: fixed;
+    top: 20%;
+    left: 70%;
+    width: 350px;
+    height: 510px;
+    padding: 10px;
+    border: none;
+    box-shadow: 2px 2px 5px #333;
+    border-radius: 11px;
+    background: #fff;
+    z-index: 4;
+}
+.dialog_backdrop{
+    background: red;
+    position: absolute;
+    width:100%;
+    height:8000px;
+    transform:scale(0);
+    overflow: hidden;
+    background: #999;
+    opacity: 0.5;
+    z-index: 4;
+}
+/* <----------------------------------------media----------------------------------------> */
 @media(max-width:900px) {
     section {
         overflow: hidden;
