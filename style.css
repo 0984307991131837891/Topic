@@ -342,9 +342,9 @@ section h1 {
 }
 .dialog_backdrop{
     background: red;
-    position: absolute;
+    position: fixed;
     width:100%;
-    height:8000px;
+    height:100vh;
     transform:scale(0);
     overflow: hidden;
     background: #999;
