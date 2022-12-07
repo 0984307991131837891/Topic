@@ -10,17 +10,42 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./icon/LOGO.jpg">
     <script src="https://code.jquery.com/jquery-3.6.1.js"
-    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <style>
+            body.loading {
+                overflow: hidden;
+            }
     
+            body.loading .loading_modal {
+                display: block;
+            }
+    
+            .loading_modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: rgba(255, 0, 0, 0.8);
+            }
+        </style>
 </head>
 
 <body>
+    <script>
+        document.querySelector('body').classList.add("loading");
+    </script>
+    <div class="loading_modal">
+        Place at bottom of page
+    </div>
     <div class="dialog_backdrop"></div>
     <header>
         <div class="navbar" id="navbar">
-            
+
             <div class="LOGO"><a href="#">LOGO</a></div>
-            
+
             <div class="nav-links" id="navLinks">
                 <div class="fa" onclick="hideMenu()"><img src="./icon/./close(黑).png" alt="close"></div>
                 <ul>
@@ -33,18 +58,18 @@
             <div class="fa" onclick="showMenu()"><img src="./icon/menu(黑).png" alt="menu"></div>
         </div>
     </header>
-    
-    
+
+
     <div class="carousel" id="carousel">
-        
+
         <div class="container">
             <img src="./img/輪地瓜.jpg">
             <img src="./img/輪芋頭.jpg">
             <img src="./img/輪文旦.jpg">
             <img src="./img/輪文山包種茶.jpg">
-            
+
         </div>
-        
+
         <div class="shift">
             <button class='btn left' onclick="leftShift()">&lt;</button>
             <button class='btn right' onclick="rightShift()">&gt;</button>
@@ -191,9 +216,9 @@
 
             </div>
         </div>
-        
+
         <script src="./map.js"></script>
-        
+
         <div class="container2">
             <div class="div1" id="地瓜"></div>
             <div class="img-inset">
@@ -521,6 +546,9 @@
         </div>
     </section>
 </body>
+    <script>
+        document.querySelector('body').classList.remove("loading");
+    </script>
 
 <script src="./index.js"></script>
 
