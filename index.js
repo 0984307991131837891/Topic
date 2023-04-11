@@ -5,7 +5,7 @@
 
     }
     function hideMenu() {
-        navLinks.style.right = '-200px';
+        navLinks.style.right = '-400px';
 
     }
     
@@ -16,11 +16,9 @@
             index++
             refresh()
 
-        }, 3000)
+        }, 5000)
     }
     let autoTimer = createAuto()
-
-
 
     let index = 0
     function refresh() {

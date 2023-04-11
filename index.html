@@ -9,29 +9,9 @@
     <title>Topic</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./icon/LOGO.jpg">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css' integrity='sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==' crossorigin='anonymous'/>
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-        <style>
-
-            body.loading {
-                overflow: hidden;
-            }
-    
-            body.loading .loading_modal {
-                display: block;
-            }
-    
-            .loading_modal {
-                display: none;
-                position: fixed;
-                z-index: 1000;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                background-color: rgba(255, 0, 0, 0.8);
-            }
-        </style>
 </head>
 
 <body>
@@ -39,21 +19,25 @@
         document.querySelector('body').classList.add("loading");
     </script>
     <div class="loading_modal">
-        Place at bottom of page
+        <div class="loading-animation">
+            <div class="bo bo1"></div>
+            <div class="bo bo2"></div>
+            <div class="bo bo3"></div>
+            <div class="bo bo4"></div>
+        </div>
     </div>
     <div class="dialog_backdrop"></div>
     <header>
         <div class="navbar" id="navbar">
 
-            <div class="LOGO"><a href="#">LOGO</a></div>
+            <div class="LOGO"><a href="#">新北市<span style="color:rgb(131, 233, 97);font-size:43px">農產品伴手禮</span></a></div>
 
             <div class="nav-links" id="navLinks">
                 <div class="fa" onclick="hideMenu()"><img src="./icon/./close(黑).png" alt="close"></div>
                 <ul>
                     <li><a href="index.html">首頁</a></li>
-                    <li><a href="#Imgmain">互動地圖</a></li>
-                    <li><a href="about.html">關於我們</a></li>
-                    <li><a href="connection.html">聯絡我們</a></li>
+                    <li><a href="#Imgmain">新北農產品互動地圖</a></li>
+                    <li><a href="#desc">新北農產品介紹</a></li>
                 </ul>
             </div>
             <div class="fa" onclick="showMenu()"><img src="./icon/menu(黑).png" alt="menu"></div>
@@ -83,12 +67,13 @@
             <button class='indicator' onclick="setIndex(3)"></button>
         </div>
     </div>
-    <a href="#top" class="to_top_btn"></a>
+    <a href="#top" class="to_top_btn">
+        <i class="fa-sharp fa-solid fa-arrow-up"></i>
+    </a>
     <section>
-        <h1 id="Imgmain">新北農產品特色</h1>
+        <h1 class="sech1" id="Imgmain">新北農產品<span style="color:#bda">互動地圖</span></h1>
         <div class="Imgmain" style='margin-bottom:60px;'>
             <div>
-                <span>新北農產品Map</span>
                 <h2>
                     <div class="MapText">　</div>
                     <div id="dialog">
@@ -96,11 +81,8 @@
                         <div class="MapImg"></div>
                         <button class="close"></button>
                     </div>
-
                 </h2>
-
                 <img src="./mapImages/新北.png" usemap="#Map" style='position:absolute;opacity:0;z-index:3;'>
-
                 <map name="Map">
                     <area shape="poly" href="#Imgmain" onmouseover="TextHover('三峽')"
                         coords="44,359,66,352,81,337,94,340,130,349,165,352,178,360,182,374,176,389,176,414,185,419,186,438,172,454,152,475,118,430,102,431,94,438,70,428,76,422,64,412,78,407,49,380"
@@ -220,6 +202,8 @@
 
         <script src="./map.js"></script>
 
+
+        <h1 class="sech1" id="desc">新北農產品<span style="color:#faa">介紹</span></h1>
         <div class="container2">
             <div class="div1" id="地瓜"></div>
             <div class="img-inset">
@@ -545,12 +529,15 @@
             </div>
         </div>
     </section>
+    <footer>
+        2022&copy;版權所有
+    </footer>
 </body>
 
+<script src="./index.js"></script>
     <script>
         document.querySelector('body').classList.remove("loading");
     </script>
-<script src="./index.js"></script>
 
 
 </html>
