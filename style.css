@@ -7,27 +7,27 @@
   text-decoration: none;
 }
 
-.sech1{
-    text-align: center;
-    font-size: 52px;
-    position: relative;
-    padding: 110px 0;
+.sech1 {
+  text-align: center;
+  font-size: 52px;
+  position: relative;
+  padding: 110px 0;
 }
 
-.sech1 span{
-    font-size: 60px;
+.sech1 span {
+  font-size: 60px;
 }
 
-.sech1::before{
-    content: "";
-    position: absolute;
+.sech1::before {
+  content: "";
+  position: absolute;
 
-    width: 5px;
-    height: 70px;
-    transform: translateX(-10px);
-    
-    text-align: center;
-    background-color: rgb(255, 214, 51);
+  width: 5px;
+  height: 70px;
+  transform: translateX(-10px);
+
+  text-align: center;
+  background-color: rgb(255, 214, 51);
 }
 
 
@@ -91,23 +91,28 @@ body.loading .loading_modal {
     top: -45px;
     left: -45px;
   }
+
   25% {
     top: -45px;
     left: 45px;
   }
+
   50% {
     top: 45px;
     left: 45px;
   }
+
   75% {
     top: 45px;
     left: -45px;
   }
+
   100% {
     top: -45px;
     left: -45px;
   }
 }
+
 /* ----------loading-animation End ---------- */
 
 .LOGO a {
@@ -134,7 +139,7 @@ header {
   border-radius: 50px;
   background-color: #fff;
 
-  opacity: 0.85;
+  opacity: 0.9;
   padding: 1.2% 5%;
   /* 平圴分配 */
   display: flex;
@@ -201,7 +206,7 @@ header {
   justify-content: center;
   align-items: center;
   font-size: 50px;
-  color:#444;
+  color: #444;
 }
 
 /* <----------------------------------------carousel------------------------------------------> */
@@ -305,6 +310,17 @@ section {
 .container2 {
   padding: 2% 6%;
   display: flex;
+}
+
+.main-content {
+  margin: auto;
+  width: clamp(80%, 992px, 100%);
+}
+
+@media (min-width:992px) {
+  .container2:nth-of-type(odd) {
+    flex-direction: row-reverse;
+  }
 }
 
 .img-inset {
@@ -425,6 +441,7 @@ section {
   background: #fff;
   z-index: 4;
 }
+
 .dialog_backdrop {
   background: red;
   position: fixed;
@@ -436,20 +453,22 @@ section {
   opacity: 0.5;
   z-index: 4;
 }
+
 /* <----------------------------------------media----------------------------------------> */
 
 /* <----------------------------------------footer Start----------------------------------------> */
-footer{
-    height: 5vh;
-    background-color: #efd;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+footer {
+  height: 5vh;
+  background-color: #efd;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 /* <----------------------------------------footer End----------------------------------------> */
 
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   section {
     overflow: hidden;
   }
