@@ -13,8 +13,6 @@ dialog_backdrop.addEventListener("click", function () {
 
 })
 
-
-
 // -------------------------
 
 $("area").hover(function () {

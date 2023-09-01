@@ -357,7 +357,8 @@ section {
 }
 
 .content span {
-  font-size: 24px;
+  font-size: 36px;
+  color: #ffac5e
 }
 
 .img-inset img {
